@@ -2,6 +2,7 @@
 @use "./modules/mixin";
 @use "./modules/flex";
 @use "./modules/padding-margin";
+@use "./modules/buttons";
 
 /*----------------*/
 //De-bug border colours
@@ -86,6 +87,42 @@ p {
         align-items: center;
         &--icon-label {
           text-align: center;
+        }
+      }
+    }
+  }
+  &__projects {
+    &--cards {
+      .card-block {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        &--image {
+          max-height: 70%;
+        }
+      }
+      .card-description {
+        &__heading {
+          &--eyebrow {
+            border: $green;
+          }
+          &--title {
+            border: $red;
+          }
+        }
+        &--text {
+          border: $blue;
+        }
+        &__button-box {
+          border: $blue;
+          display: flex;
+          justify-content: center;
+          &--button {
+            border: $red;
+            @include buttons.button(black, rgba(0, 0, 0, 0));
+            @include padding-margin.padding-margin-settings;
+            display: flex;
+          }
         }
       }
     }

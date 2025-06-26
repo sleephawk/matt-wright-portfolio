@@ -93,6 +93,37 @@ p {
 .main-container__technical-skills--icon-gallery .icon-box--icon-label {
   text-align: center;
 }
+.main-container__projects--cards .card-block {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.main-container__projects--cards .card-block--image {
+  max-height: 70%;
+}
+.main-container__projects--cards .card-description__heading--eyebrow {
+  border: solid 2px green;
+}
+.main-container__projects--cards .card-description__heading--title {
+  border: solid 2px red;
+}
+.main-container__projects--cards .card-description--text {
+  border: solid 2px blue;
+}
+.main-container__projects--cards .card-description__button-box {
+  border: solid 2px blue;
+  display: flex;
+  justify-content: center;
+}
+.main-container__projects--cards .card-description__button-box--button {
+  border: solid 2px red;
+  border-radius: 7px;
+  border: solid 1px black;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 16px 8px 16px 8px;
+  margin: 16px;
+  display: flex;
+}
 
 footer {
   background-color: black;

@@ -1,0 +1,7 @@
+@use "palette";
+
+@mixin button($border-color, $background-color) {
+  border-radius: 7px;
+  border: solid 1px $border-color;
+  background-color: $background-color;
+}
