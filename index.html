@@ -4,18 +4,167 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Matt Wright - Junior Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Forum&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&family=Press+Start+2P&family=Rouge+Script&family=Tangerine:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header></header>
+    <header class="page-hero">
+      <p class="page-hero--hello-message">👋 Hey! I'm Matt Wright!</p>
+      <h1 class="page-hero--heading">
+        A Junior Software Developer with a History in Design. Based in the UK.
+      </h1>
+    </header>
     <main>
-      <div class="page-container">
-        <section class="page-container__portfolio-section"></section>
-        <section class="page-container__portfolio-section"></section>
-        <section class="page-container__portfolio-section"></section>
+      <div class="main-container">
+        <!-- About Section -->
+        <section
+          aria-label="About Me section containing profile & biography details"
+          class="main-container__about-me"
+        >
+          <h2 class="main-container__about-me--title">About Me</h2>
+          <img
+            src=""
+            alt="A photo of Junior Dev Matt Wright"
+            class="main-container__about-me--profile-image"
+          />
+          <p class="main-container__about-me--biography">
+            Nulla ac praesent tempor, orci sit nunc eget. Aliquam urna nunc,
+            viverra sed tortor non. Id at pellentesque mauris at tincidunt
+            venenatis urna mus. Sodales pretium tempus tincidunt tellus in
+            imperdiet. Integer fames maecenas amet, consequat. Et cursus gravida
+            enim lorem urna, vivamus pulvinar porttitor. Ultrices neque nec
+            feugiat ullamcorper ultricies ante sagittis commodo.
+            <br /><br />Nunc malesuada amet at eget consectetur sit. Nibh in ut
+            diam nulla sed porttitor et. At neque tellus convallis urna, sodales
+            neque. In enim auctor diam nunc duis rutrum adipiscing pellentesque
+            eu. In sollicitudin neque dictum neque proin pretium ante. Ac
+            bibendum vestibulum ullamcorper pellentesque scelerisque. Neque
+            senectus eu dictum ultricies tellus nisl eget sem libero. Eu sit
+            quis vestibulum donec cras elementum.
+          </p>
+        </section>
+        <!-- Technical Section -->
+        <section
+          aria-label="A section outlining the technical experience and programme proficiences held by Matt."
+          class="main-container__technical-skills"
+        >
+          <h2 class="main-container__technical-skills--title">
+            Technical Skills
+          </h2>
+          <p class="main-container__technical-skills--skills-text">
+            Maecenas accumsan tincidunt id et in ut diam sit. Metus, nec, augue
+            urna gravida nisl, tortor sapien nec sollicitudin.
+          </p>
+          <div
+            aria-label="gallery of icons depicting the programmes, programming languages and websites Matt is proficient in using"
+            role="group"
+            class="main-container__technical-skills--icon-gallery"
+          >
+            <!-- Springboot icon -->
+            <div class="icon-box">
+              <img
+                class="icon-box--icon"
+                src="Assets/Icons/Springboot.png"
+                alt="Spring Boot logo icon"
+              />
+              <p class="icon-box--icon-label">Spring Boot</p>
+            </div>
+            <!-- Java icon -->
+            <div class="icon-box">
+              <img
+                class="icon-box--icon"
+                src="Assets/Icons/Java.png"
+                alt="Java logo icon"
+              />
+              <p class="icon-box--icon-label">Java</p>
+            </div>
+            <!-- HTML5 icon -->
+            <div class="icon-box">
+              <img
+                class="icon-box--icon"
+                src="Assets/Icons/HTML 5.png"
+                alt="HTML 5logo icon"
+              />
+              <p class="icon-box--icon-label">HTML 5</p>
+            </div>
+            <!-- CSS3 icon -->
+            <div class="icon-box">
+              <img
+                class="icon-box--icon"
+                src="Assets/Icons/CSS3.png"
+                alt="CSS3 logo icon"
+              />
+              <p class="icon-box--icon-label">CSS3</p>
+            </div>
+            <!-- JS icon -->
+            <div class="icon-box">
+              <img
+                class="icon-box--icon"
+                src="Assets/Icons/Javascript.png"
+                alt="Javascript logo icon"
+              />
+              <p class="icon-box--icon-label">Javascript</p>
+            </div>
+            <!-- SCSS icon -->
+            <div class="icon-box">
+              <img
+                class="icon-box--icon"
+                src="Assets/Icons/SCSS.png"
+                alt="SCSSlogo icon"
+              />
+              <p class="icon-box--icon-label">SCSS</p>
+            </div>
+            <!-- BEM icon -->
+            <div class="icon-box">
+              <img
+                class="icon-box--icon"
+                src="Assets/Icons/BEM.png"
+                alt="BEM logo icon"
+              />
+              <p class="icon-box--icon-label">BEM</p>
+            </div>
+            <!-- React icon -->
+            <div class="icon-box">
+              <img
+                class="icon-box--icon"
+                src="Assets/Icons/React.png"
+                alt="React logo icon"
+              />
+              <p class="icon-box--icon-label">React</p>
+            </div>
+            <!-- Git icon -->
+            <div class="icon-box">
+              <img
+                class="icon-box--icon"
+                src="Assets/Icons/Git.png"
+                alt="Git logo"
+              />
+              <p class="icon-box--icon-label">Git</p>
+            </div>
+          </div>
+        </section>
+        <!-- Projects Section -->
+        <section
+          aria-label="My Projects"
+          class="main-container__projects--"
+        ></section>
       </div>
     </main>
-    <footer></footer>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-content--logos">
+          <img aria-label="go to github page" src="" alt="github icon" />
+          <img aria-label="go to LinkedIn page" src="" alt="LinkedIn icon" />
+          <img aria-label="go to CV" src="" alt="CV icon" />
+        </div>
+        <div class="footer-content--email"></div>
+      </div>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>

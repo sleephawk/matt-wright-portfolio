@@ -1,0 +1,100 @@
+/*----------------*/
+/*----------------*/
+/*----------------*/
+/*----------------*/
+* {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 64px;
+}
+
+h2 {
+  font-size: 32px;
+  padding: 16px 8px 16px 8px;
+  margin: 16px;
+  text-align: center;
+}
+
+p {
+  font-size: 18px;
+}
+
+/*--------*/
+/*--------*/
+.page-hero {
+  padding: 16px 8px 16px 8px;
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.page-hero--heading {
+  font-weight: 600;
+  width: 326px;
+  align-items: center;
+  padding: 16px 8px 16px 8px;
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.page-hero--hello-message {
+  padding: 16px 8px 16px 8px;
+  margin: 16px;
+  font-size: 20px;
+}
+
+.main-container {
+  padding: 16px 8px 16px 8px;
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.main-container__about-me {
+  padding: 16px 8px 16px 8px;
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.main-container__about-me--biography {
+  line-height: 1.8;
+}
+.main-container__technical-skills {
+  padding: 16px 8px 16px 8px;
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.main-container__technical-skills--skills-text {
+  padding: 16px 8px 16px 8px;
+  margin: 16px;
+  text-align: center;
+  line-height: 1.6;
+  font-size: 16px;
+}
+.main-container__technical-skills--icon-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.main-container__technical-skills--icon-gallery .icon-box {
+  margin: 16px 0;
+  width: 67px;
+  height: 112px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px;
+  justify-content: center;
+  align-items: center;
+}
+.main-container__technical-skills--icon-gallery .icon-box--icon-label {
+  text-align: center;
+}
+
+footer {
+  background-color: black;
+  min-width: 100px;
+}

@@ -1,0 +1,98 @@
+@use "./modules/palette";
+@use "./modules/mixin";
+@use "./modules/flex";
+@use "./modules/padding-margin";
+
+/*----------------*/
+//De-bug border colours
+/*----------------*/
+$red: solid 2px red;
+$blue: solid 2px blue;
+$green: solid 2px green;
+
+/*----------------*/
+//General Rules
+/*----------------*/
+* {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 64px;
+}
+
+h2 {
+  font-size: 32px;
+  @include padding-margin.padding-margin-settings;
+  text-align: center;
+}
+
+p {
+  font-size: 18px;
+}
+
+/*--------*/
+//BEM rules
+/*--------*/
+
+.page-hero {
+  @include mixin.combined-block-settings;
+  &--heading {
+    font-weight: 600;
+    width: 326px;
+    align-items: center;
+    @include mixin.combined-block-settings;
+  }
+  &--hello-message {
+    @include padding-margin.padding-margin-settings;
+    font-size: 20px;
+  }
+}
+
+.main-container {
+  @include mixin.combined-block-settings;
+  &__about-me {
+    @include mixin.combined-block-settings;
+
+    &--biography {
+      line-height: 1.8;
+    }
+  }
+  &__technical-skills {
+    @include mixin.combined-block-settings;
+    &--skills-text {
+      @include padding-margin.padding-margin-settings;
+      text-align: center;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    //ICON GALLERY RULES
+    &--icon-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .icon-box {
+        margin: 16px 0;
+        width: 67px;
+        height: 112px;
+        display: flex;
+        flex-direction: column;
+        padding: 0 15px;
+        justify-content: center;
+        align-items: center;
+        &--icon-label {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  background-color: palette.$secondary-color;
+  min-width: 100px;
+}

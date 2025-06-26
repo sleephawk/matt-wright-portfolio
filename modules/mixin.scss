@@ -1,0 +1,7 @@
+@use "flex";
+@use "padding-margin";
+
+@mixin combined-block-settings() {
+  @include padding-margin.padding-margin-settings();
+  @include flex.flex-settings();
+}
