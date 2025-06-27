@@ -1,7 +1,18 @@
 @use "palette";
+@use "padding-margin";
 
 @mixin button($border-color, $background-color) {
   border-radius: 7px;
   border: solid 1px $border-color;
   background-color: $background-color;
+  width: 113px;
+  display: inline-flex;
+  @include padding-margin.padding-margin-settings;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@mixin button-text() {
+  font-weight: 700;
+  font-size: 16px;
 }

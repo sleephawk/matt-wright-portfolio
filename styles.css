@@ -93,39 +93,85 @@ p {
 .main-container__technical-skills--icon-gallery .icon-box--icon-label {
   text-align: center;
 }
+.main-container__projects--cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.main-container__projects--cards .card-container {
+  min-width: 373px;
+  max-width: 440px;
+  justify-content: center;
+  margin: 16px;
+}
 .main-container__projects--cards .card-block {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  height: 326px;
+  background-color: #e3f6f5;
 }
 .main-container__projects--cards .card-block--image {
   max-height: 70%;
 }
 .main-container__projects--cards .card-description__heading--eyebrow {
-  border: solid 2px green;
+  margin-top: 16px;
+  font-size: 16px;
+  font-weight: 600;
 }
 .main-container__projects--cards .card-description__heading--title {
-  border: solid 2px red;
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+  font-size: 38px;
+  text-align: start;
+  margin-bottom: 16px;
 }
 .main-container__projects--cards .card-description--text {
-  border: solid 2px blue;
+  margin-bottom: 18px;
 }
 .main-container__projects--cards .card-description__button-box {
-  border: solid 2px blue;
   display: flex;
-  justify-content: center;
+  height: 42px;
+  gap: 20px;
+  justify-content: flex-start;
 }
 .main-container__projects--cards .card-description__button-box--button {
-  border: solid 2px red;
   border-radius: 7px;
   border: solid 1px black;
   background-color: rgba(0, 0, 0, 0);
+  width: 113px;
+  display: inline-flex;
   padding: 16px 8px 16px 8px;
   margin: 16px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.main-container__projects--cards .card-description__button-box--button .inner-button {
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-container__projects--cards .card-description__button-box--button .inner-button--button-text {
+  font-weight: 700;
+  font-size: 16px;
+}
+.main-container__projects--cards .card-description__button-box--button .inner-button--angle-icon {
+  height: 20px;
+  width: 20px;
+  display: flex;
+  align-items: center;
 }
 
-footer {
+.footer-content {
   background-color: black;
   min-width: 100px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.footer-content--email {
+  color: white;
 }
