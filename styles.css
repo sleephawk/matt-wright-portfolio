@@ -233,11 +233,16 @@ p {
 }
 .main-container__technical-skills {
   align-items: center;
+  text-align: center;
 }
 .main-container__technical-skills--title {
-  margin: 0;
+  margin: 0 auto;
   opacity: 0;
   transition: opacity 1s linear;
+  position: relative;
+  display: inline-block;
+  align-self: center;
+  justify-self: center;
 }
 .main-container__technical-skills--title::after {
   content: "";
@@ -245,7 +250,7 @@ p {
   background-color: rgba(46, 250, 141, 0.5411764706);
   height: 13px;
   width: 241px;
-  right: 315px;
+  right: 0px;
   top: 40px;
 }
 .main-container__technical-skills--skills-text {
