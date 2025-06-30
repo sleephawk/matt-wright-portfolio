@@ -39,3 +39,12 @@ const aboutTitle = document.querySelector(".profile__text--title");
 [technicalSkillsTitle, projectsTitle, aboutTitle].forEach((title) => {
   observer.observe(title);
 });
+
+/*Rabbit link */
+
+rabbit = document.querySelector(".icon-box--white-rabbit");
+
+rabbit.addEventListener("click", () => {
+  window.location.href =
+    "https://sleephawk.github.io/matt-writes-code/alt-home.html";
+});
