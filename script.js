@@ -45,6 +45,8 @@ const aboutTitle = document.querySelector(".profile__text--title");
 rabbit = document.querySelector(".icon-box--white-rabbit");
 
 rabbit.addEventListener("click", () => {
-  window.location.href =
-    "https://sleephawk.github.io/matt-writes-code/alt-home.html";
+  window.open(
+    "https://sleephawk.github.io/matt-writes-code/alt-home.html",
+    "_blank"
+  );
 });
