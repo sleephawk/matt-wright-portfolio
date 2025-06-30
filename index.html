@@ -13,41 +13,54 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="page-hero">
-      <p class="page-hero--hello-message">👋 Hey! I'm Matt Wright!</p>
-      <h1 class="page-hero--heading">
-        A Junior Software Developer with a History in Design. Based in the UK.
-      </h1>
+    <header class="header">
+      <nav class="header__nav">
+        <img
+          src="Assets/Icons/favicon.svg"
+          alt="sleephawk logo: a crow silhouette within an eclipsed egg shape, with vector waves emitting from the top"
+          class="header__nav--nav-icon"
+        />
+        <a href="#" class="nav-burger" role="menu">
+          <img src="Assets/Icons/mini-burg.png" alt="Mini burger menu" />
+        </a>
+
+        <div role="navigation" class="header__nav--links">
+          <a href="" class="nav-anchor">Home</a>
+          <a href="#about" class="nav-anchor">About</a>
+          <a href="#projects" class="nav-anchor">Projects </a>
+
+          <a
+            class="nav-button"
+            target="blank"
+            role="button"
+            rel="noopener noreferrer"
+            href="mailto:Matt.Wright@nology.io"
+            >Get in Touch</a
+          >
+        </div>
+      </nav>
+      <div aria-label='the page hero for Matt Wrights portfolio containing graphics and the title" class="header__page-hero">
+        <div class="header__page-hero--text">
+          <p class="hero-text--hello-message">👋 Hey! I'm Matt Wright!</p>
+          <div class="hero-text__heading">
+          <h1 class="hero-text__heading--title">
+            A Junior Software Developer with a History in Design. Based in the
+            UK.
+          </h1>
+          <img class="hero-text__heading--underline" src="Assets/Graphics/underline.png" alt="" aria-hidden="true">
+          </div>
+          <a class="hero-text__heading--button" role="button" href="#projects">Take a look at my work &#10549</a>
+        </div>
+        <div class="header__page-hero--illustration">
+          <img
+            src="Assets/Illustration/mw_original refined@2x.png"
+            alt="an original illustration of Matt by Matt in a fun cartoon style, depicting him typing on a Pineapple branded laptop with giant wavey arms"
+          />
+        </div>
+      </div>
     </header>
     <main>
-      <div class="main-container">
-        <!-- About Section -->
-        <section
-          aria-label="About Me section containing profile & biography details"
-          class="main-container__about-me"
-        >
-          <h2 class="main-container__about-me--title">About Me</h2>
-          <img
-            src=""
-            alt="A photo of Junior Dev Matt Wright"
-            class="main-container__about-me--profile-image"
-          />
-          <p class="main-container__about-me--biography">
-            Nulla ac praesent tempor, orci sit nunc eget. Aliquam urna nunc,
-            viverra sed tortor non. Id at pellentesque mauris at tincidunt
-            venenatis urna mus. Sodales pretium tempus tincidunt tellus in
-            imperdiet. Integer fames maecenas amet, consequat. Et cursus gravida
-            enim lorem urna, vivamus pulvinar porttitor. Ultrices neque nec
-            feugiat ullamcorper ultricies ante sagittis commodo.
-            <br /><br />Nunc malesuada amet at eget consectetur sit. Nibh in ut
-            diam nulla sed porttitor et. At neque tellus convallis urna, sodales
-            neque. In enim auctor diam nunc duis rutrum adipiscing pellentesque
-            eu. In sollicitudin neque dictum neque proin pretium ante. Ac
-            bibendum vestibulum ullamcorper pellentesque scelerisque. Neque
-            senectus eu dictum ultricies tellus nisl eget sem libero. Eu sit
-            quis vestibulum donec cras elementum.
-          </p>
-        </section>
+      <div aria-label='the content container for all the main topics on this page' class="main-container">
         <!-- Technical Section -->
         <section
           aria-label="A section outlining the technical experience and programme proficiences held by Matt."
@@ -109,6 +122,14 @@
                 alt="Javascript logo icon"
               />
               <p class="icon-box--icon-label">Javascript</p>
+              <img
+                aria-hidden="true"
+                src="Assets/Illustration/rabbit/blank-rabbit.png"
+                alt=""
+                class="icon-box--white-rabbit"
+              />
+              <div aria-hidden="true" class="icon-box--white-cover" />WR
+              </div>
             </div>
             <!-- SCSS icon -->
             <div class="icon-box">
@@ -150,175 +171,186 @@
         </section>
         <!-- Projects Section -->
         <section aria-label="My Projects" class="main-container__projects">
-          <h2 class="main-container__projects--title">My Projects</h2>
-          <div class="main-container__projects--cards">
-            <!-- card container === one card -->
+          <h2 class="main-container__projects--title" id="projects">
+            My Projects
+          </h2>
+          <div aria-label="a group of cards presenting the different projects Matt's undertaken" class="main-container__projects--cards">
+            <!-- New Card -->
             <div
               aria-label="a card element containing the details and links to a project"
               class="card-container"
             >
-              <!-- card-block === blue container for the image at the top of card -->
-              <div class="card-block">
+              <div class="card-block" aria-label="a decorated container for the screenshot of the web project in this card'>
                 <img
                   class="card-block--image"
                   src="Assets/Screenshots/timer_ss.png"
                   alt="a screenshot from the dynamic timer made with html, css and js"
                 />
               </div>
-              <div class="card-description">
-                <p class="card-description__heading--eyebrow">REACT</p>
-                <h2 class="card-description__heading--title">Client Project</h2>
+              <div class="card-description" aria-label='a brief introduction the project on the card, what's its made out of and links to find it'>
+                <p class="card-description__heading--eyebrow">
+                  HTML, CSS & JAVASCRIPT
+                </p>
+                <h2 class="card-description__heading--title">Dynamic Timer</h2>
                 <p class="card-description--text">
                   Maecenas accumsan tincidunt id et in ut diam sit. Metus, nec,
                   augue urna gravida nisl, tortor sapien nec sollicitudin.
                 </p>
-                <div class="card-description__button-box">
-                  <button class="card-description__button-box--button">
-                    <span class="inner-button--button-text">Code</span>
-                    <div class="inner-button--angle-icon">
-                      <img
-                        src="Assets/Icons/angle_brackets.svg"
-                        alt="vector of angle brackets representing a HTML tag"
-                      />
-                    </div>
-                  </button>
-                  <button class="card-description__button-box--button">
-                    <span class="inner-button--button-text">Preview</span>
-                    <div class="inner-button--angle-icon">
-                      <img
-                        src="Assets/Icons/angle_brackets.svg"
-                        alt="vector of angle brackets representing a HTML tag"
-                      />
-                    </div>
-                  </button>
-                </div>
+              </div>
+              <div class="project-preview-links-container">
+                <a class="project-preview-links-container__link" href="#"
+                  ><span class="project-preview-links-container__link--text"
+                    >Code</span
+                  ><img
+                    class="project-preview-links-container__link--image"
+                    src="Assets/Icons/angle_brackets.svg"
+                    alt=""
+                    aria-hidden
+                /></a>
+                <a class="project-preview-links-container__link" href="#"
+                  ><span class="project-preview-links-container__link--text"
+                    >Preview</span
+                  ><img
+                    class="project-preview-links-container__link--image"
+                    src="Assets/Icons/preview.svg"
+                    alt=""
+                    aria-hidden
+                /></a>
               </div>
             </div>
-            <!-- card container === one card -->
+            <!-- New Card -->
             <div
               aria-label="a card element containing the details and links to a project"
               class="card-container"
             >
-              <!-- card-block === blue container for the image at the top of card -->
-              <div class="card-block">
+              <div class="card-block" aria-label="a decorated container for the screenshot of the web project in this card'>
                 <img
                   class="card-block--image"
-                  src="Assets/Screenshots/timer_ss.png"
-                  alt="a screenshot from the dynamic timer made with html, css and js"
+                  src="Assets/Screenshots/designs_ss.png"
+                  alt="a screenshot from the sleephawk designs website made with html, css and js"
                 />
               </div>
-              <div class="card-description">
-                <p class="card-description__heading--eyebrow">REACT</p>
-                <h2 class="card-description__heading--title">Client Project</h2>
+              <div class="card-description" aria-label='a brief introduction the project on the card, what's its made out of and links to find it'>
+                <p class="card-description__heading--eyebrow">
+                  HTML, CSS & JAVASCRIPT
+                </p>
+                <h2 class="card-description__heading--title">
+                  Sleephawk Designs
+                </h2>
                 <p class="card-description--text">
                   Maecenas accumsan tincidunt id et in ut diam sit. Metus, nec,
                   augue urna gravida nisl, tortor sapien nec sollicitudin.
                 </p>
-                <div class="card-description__button-box">
-                  <button class="card-description__button-box--button">
-                    <span class="inner-button--button-text">Code</span>
-                    <div class="inner-button--angle-icon">
-                      <img
-                        src="Assets/Icons/angle_brackets.svg"
-                        alt="vector of angle brackets representing a HTML tag"
-                      />
-                    </div>
-                  </button>
-                  <button class="card-description__button-box--button">
-                    <span class="inner-button--button-text">Preview</span>
-                    <div class="inner-button--angle-icon">
-                      <img
-                        src="Assets/Icons/angle_brackets.svg"
-                        alt="vector of angle brackets representing a HTML tag"
-                      />
-                    </div>
-                  </button>
-                </div>
+              </div>
+              <div class="project-preview-links-container">
+                <a class="project-preview-links-container__link" href="#"
+                  ><span class="project-preview-links-container__link--text"
+                    >Code</span
+                  ><img
+                    class="project-preview-links-container__link--image"
+                    src="Assets/Icons/angle_brackets.svg"
+                    alt=""
+                    aria-hidden
+                /></a>
+                <a class="project-preview-links-container__link" href="#"
+                  ><span class="project-preview-links-container__link--text"
+                    >Preview</span
+                  ><img
+                    class="project-preview-links-container__link--image"
+                    src="Assets/Icons/preview.svg"
+                    alt=""
+                    aria-hidden
+                /></a>
               </div>
             </div>
-            <!-- card container === one card -->
+            <!-- New Card -->
             <div
               aria-label="a card element containing the details and links to a project"
               class="card-container"
             >
-              <!-- card-block === blue container for the image at the top of card -->
-              <div class="card-block">
+              <div class="card-block" aria-label="a decorated container for the screenshot of the web project in this card'>
                 <img
                   class="card-block--image"
-                  src="Assets/Screenshots/timer_ss.png"
-                  alt="a screenshot from the dynamic timer made with html, css and js"
+                  src="Assets/Screenshots/tmp_ss.png"
+                  alt="a screenshot from the website Things Made Public"
                 />
               </div>
-              <div class="card-description">
-                <p class="card-description__heading--eyebrow">REACT</p>
-                <h2 class="card-description__heading--title">Client Project</h2>
+              <div class="card-description" aria-label='a brief introduction the project on the card, what's its made out of and links to find it'>
+                <p class="card-description__heading--eyebrow">WORDPRESS</p>
+                <h2 class="card-description__heading--title">
+                  Things Made Public
+                </h2>
                 <p class="card-description--text">
                   Maecenas accumsan tincidunt id et in ut diam sit. Metus, nec,
                   augue urna gravida nisl, tortor sapien nec sollicitudin.
                 </p>
-                <div class="card-description__button-box">
-                  <button class="card-description__button-box--button">
-                    <span class="inner-button--button-text">Code</span>
-                    <div class="inner-button--angle-icon">
-                      <img
-                        src="Assets/Icons/angle_brackets.svg"
-                        alt="vector of angle brackets representing a HTML tag"
-                      />
-                    </div>
-                  </button>
-                  <button class="card-description__button-box--button">
-                    <span class="inner-button--button-text">Preview</span>
-                    <div class="inner-button--angle-icon">
-                      <img
-                        src="Assets/Icons/angle_brackets.svg"
-                        alt="vector of angle brackets representing a HTML tag"
-                      />
-                    </div>
-                  </button>
-                </div>
+              </div>
+              <div class="project-preview-links-container">
+                <a class="project-preview-links-container__link" href="#"
+                  ><span class="project-preview-links-container__link--text"
+                    >Code</span
+                  ><img
+                    class="project-preview-links-container__link--image"
+                    src="Assets/Icons/angle_brackets.svg"
+                    alt=""
+                    aria-hidden
+                /></a>
+                <a class="project-preview-links-container__link" href="#"
+                  ><span class="project-preview-links-container__link--text"
+                    >Preview</span
+                  ><img
+                    class="project-preview-links-container__link--image"
+                    src="Assets/Icons/preview.svg"
+                    alt=""
+                    aria-hidden
+                /></a>
               </div>
             </div>
-            <!-- card container === one card -->
-            <div
-              aria-label="a card element containing the details and links to a project"
-              class="card-container"
-            >
-              <!-- card-block === blue container for the image at the top of card -->
-              <div class="card-block">
-                <img
-                  class="card-block--image"
-                  src="Assets/Screenshots/timer_ss.png"
-                  alt="a screenshot from the dynamic timer made with html, css and js"
-                />
-              </div>
-              <div class="card-description">
-                <p class="card-description__heading--eyebrow">REACT</p>
-                <h2 class="card-description__heading--title">Client Project</h2>
-                <p class="card-description--text">
-                  Maecenas accumsan tincidunt id et in ut diam sit. Metus, nec,
-                  augue urna gravida nisl, tortor sapien nec sollicitudin.
-                </p>
-                <div class="card-description__button-box">
-                  <button class="card-description__button-box--button">
-                    <span class="inner-button--button-text">Code</span>
-                    <div class="inner-button--angle-icon">
-                      <img
-                        src="Assets/Icons/angle_brackets.svg"
-                        alt="vector of angle brackets representing a HTML tag"
-                      />
-                    </div>
-                  </button>
-                  <button class="card-description__button-box--button">
-                    <span class="inner-button--button-text">Preview</span>
-                    <div class="inner-button--angle-icon">
-                      <img
-                        src="Assets/Icons/angle_brackets.svg"
-                        alt="vector of angle brackets representing a HTML tag"
-                      />
-                    </div>
-                  </button>
-                </div>
-              </div>
+
+            <!-- end of projects container below -->
+          </div>
+          <!-- end of projects section -->
+        </section>
+        <!-- About Section -->
+        <section
+          aria-label="About Me section containing profile & biography details"
+          class="main-container__about-me"
+        >
+          <div class="main-container__about-me--profile-container">
+            <div class="profile__text">
+              <h2 class="profile__text--title" id="about">About Me</h2>
+              <p class="profile__text--biography">
+                Nulla ac praesent tempor, orci sit nunc eget. Aliquam urna nunc,
+                viverra sed tortor non. Id at pellentesque mauris at tincidunt
+                venenatis urna mus. Sodales pretium tempus tincidunt tellus in
+                imperdiet. Integer fames maecenas amet, consequat. Et cursus
+                gravida enim lorem urna, vivamus pulvinar porttitor. Ultrices
+                neque nec feugiat ullamcorper ultricies ante sagittis commodo.
+                <br /><br />Nunc malesuada amet at eget consectetur sit. Nibh in
+                ut diam nulla sed porttitor et. At neque tellus convallis urna,
+                sodales neque. In enim auctor diam nunc duis rutrum adipiscing
+                pellentesque eu. In sollicitudin neque dictum neque proin
+                pretium ante. Ac bibendum vestibulum ullamcorper pellentesque
+                scelerisque. Neque senectus eu dictum ultricies tellus nisl eget
+                sem libero. Eu sit quis vestibulum donec cras elementum.
+              </p>
+            </div>
+            <div class="profile__image-container">
+              <img
+                class="profile__image-container--graphic-circle"
+                src="Assets/Graphics/line-circle.png"
+                alt="a vector graphic of a minimal circle constructed of horizontal parallel lines"
+              />
+              <img
+                class="profile__image-container--graphic-squiggle"
+                src="Assets/Graphics/squiggle.png"
+                alt="a vector graphic of a squiggly line similar to that drawn by a pen or paintbrush"
+              />
+              <img
+                src="Assets/Photos/Profile.png"
+                alt="A photo of Junior Dev Matt Wright"
+                class="profile__image-container--profile-image"
+              />
             </div>
           </div>
         </section>
@@ -326,12 +358,33 @@
     </main>
     <footer>
       <div class="footer-content">
-        <div class="footer-content--logos">
-          <img aria-label="go to github page" src="" alt="github icon" />
-          <img aria-label="go to LinkedIn page" src="" alt="LinkedIn icon" />
-          <img aria-label="go to CV" src="" alt="CV icon" />
-        </div>
         <div class="footer-content--email">Matt.Wright@nology.io</div>
+        <div class="footer-content--icons">
+          <a href="#"
+            ><img
+              aria-label="go to github page"
+              src="Assets/Icons/git_pages.svg"
+              alt="github pages / repositories icon"
+              class="footer-icon"
+          /></a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.linkedin.com/in/matt-wright-16158098/"
+            ><img
+              aria-label="go to LinkedIn page"
+              src="Assets/Icons/linked_in.svg"
+              alt="LinkedIn icon"
+              class="footer-icon"
+          /></a>
+          <a href="#"
+            ><img
+              aria-label="go to CV"
+              src="Assets/Icons/cv.svg"
+              alt="CV icon"
+              class="footer-icon"
+          /></a>
+        </div>
       </div>
     </footer>
     <script src="script.js"></script>

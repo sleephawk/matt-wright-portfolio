@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="MAIN_DRAWING" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96.08 96.08">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #2efa8e;
+        opacity: .69;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="48.04" cy="48.04" r="48.04"/>
+</svg>

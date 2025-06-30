@@ -3,9 +3,9 @@
 @use "./modules/flex";
 @use "./modules/padding-margin";
 @use "./modules/buttons";
+@use "./modules/devices";
 
-/*----------------*/
-//De-bug border colours
+/*----------------*/ //De-bug border colours
 /*----------------*/
 $red: solid 2px red;
 $blue: solid 2px blue;
@@ -19,6 +19,8 @@ $green: solid 2px green;
   font-optical-sizing: auto;
   margin: 0;
   padding: 0;
+  color: palette.$secondary-color;
+  transition: color 2s ease-in;
 }
 
 h1 {
@@ -29,52 +31,225 @@ h2 {
   font-size: 32px;
   @include padding-margin.padding-margin-settings;
   text-align: center;
+  position: relative;
 }
 
 p {
   font-size: 18px;
 }
 
+/*----------------*/
+//Keyframes
+/*----------------*/
+
+@keyframes rabbit-1 {
+  0% {
+    background-image: url("./Assets/Illustration/rabbit/rabbit_pose_1.png");
+  }
+
+  80% {
+    background-image: url("./Assets/Illustration/rabbit/rabbit_pose_1.png");
+  }
+
+  85% {
+    background-image: url("./Assets/Illustration/rabbit/rabbit_pose_2.png");
+  }
+  90% {
+    background-image: url("./Assets/Illustration/rabbit/rabbit_pose_3.png");
+  }
+  93% {
+    background-image: url("./Assets/Illustration/rabbit/rabbit_pose_3.png");
+  }
+  97% {
+    background-image: url("./Assets/Illustration/rabbit/rabbit_pose_2.png");
+  }
+  100% {
+    background-image: url("./Assets/Illustration/rabbit/rabbit_pose_1.png");
+  }
+}
 /*--------*/
-//BEM rules
+//Page Rules (BEM)
 /*--------*/
 
-.page-hero {
-  @include mixin.combined-block-settings;
-  &--heading {
-    font-weight: 600;
-    width: 326px;
+.header {
+  background-color: palette.$primary-color;
+  &__nav {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    @include mixin.combined-block-settings;
+    margin: 0px;
+    padding: 47px 155px;
+    @include devices.catch-all-small {
+      padding: 47px 25px;
+    }
+
+    background-color: palette.$secondary-color;
+    &--nav-icon {
+      max-height: 139px;
+      @include devices.catch-all-small {
+        height: 80px;
+      }
+    }
+    &--links {
+      @include devices.phone {
+        display: none;
+      }
+      @include devices.small-screen {
+        display: none;
+      }
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      .nav-anchor {
+        text-decoration: none;
+        color: palette.$tertiary-color;
+      }
+
+      .nav-button {
+        @include buttons.standard-button;
+        width: 145px;
+        height: 45px;
+        text-align: center;
+        align-content: center;
+      }
+      .nav-anchor:hover {
+        color: palette.$highlight-color-1;
+      }
+      .nav-button:hover {
+        color: palette.$tertiary-color;
+      }
+    }
+    .nav-burger {
+      display: none;
+      margin: 0 33px;
+      @include devices.phone {
+        display: flex;
+      }
+      @include devices.small-screen {
+        display: flex;
+      }
+    }
   }
-  &--hello-message {
-    @include padding-margin.padding-margin-settings;
-    font-size: 20px;
+  &__page-hero {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    background-color: palette.$primary-color;
+    height: 738px;
+    margin-bottom: 146px;
+
+    &--text {
+      margin: 0 0 0 185px;
+      @include devices.catch-all-small {
+        margin: 0 0 0 51px;
+      }
+      .hero-text {
+        position: relative;
+        border: $green;
+        &__heading {
+          position: relative;
+          display: flex;
+          font-weight: 600;
+          align-items: center;
+          justify-content: center;
+          @include mixin.combined-block-settings;
+          &--title {
+            font-weight: 600;
+          }
+          &--underline {
+            display: none;
+            @include devices.hi-res {
+              position: absolute;
+              top: 80px;
+              width: 70%;
+              left: 40px;
+            }
+          }
+          &--button {
+            @include buttons.standard-button;
+            position: relative;
+            top: 55px;
+            padding: 27px 31.5px;
+            margin-left: 16px;
+            box-shadow: 5px 5px palette.$brown;
+          }
+        }
+        &--hello-message {
+          @include padding-margin.padding-margin-settings;
+          font-size: 20px;
+          color: palette.$brown;
+        }
+      }
+    }
+
+    &--illustration {
+      height: 100%;
+      width: 120%;
+      position: relative;
+      right: 100px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      @include devices.catch-all-smaller {
+        display: none;
+      }
+      @include devices.hi-res {
+        width: 100%;
+        right: 30px;
+      }
+    }
   }
 }
 
 .main-container {
-  @include mixin.combined-block-settings;
-  &__about-me {
-    @include mixin.combined-block-settings;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    &--biography {
-      line-height: 1.8;
-    }
-  }
+  //Technical skills section
   &__technical-skills {
-    @include mixin.combined-block-settings;
+    // justify-content: center;
+    align-items: center;
+    // width: 85%;
+
+    &--title {
+      margin: 0;
+      &::after {
+        content: "";
+        position: absolute;
+        background-color: palette.$highlight-color-Op;
+        height: 13px;
+        width: 241px;
+        right: 315px;
+        top: 40px;
+      }
+    }
+
     &--skills-text {
       @include padding-margin.padding-margin-settings;
       text-align: center;
       line-height: 1.6;
       font-size: 16px;
+      max-width: 484px;
+      justify-self: center;
+      @include devices.phone {
+        max-width: 70%;
+      }
     }
     //ICON GALLERY RULES
     &--icon-gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      margin-bottom: 120px;
+
+      justify-self: center;
+      @include devices.laptop {
+        max-width: 86%;
+      }
 
       .icon-box {
         margin: 16px 0;
@@ -85,30 +260,84 @@ p {
         padding: 0 15px;
         justify-content: center;
         align-items: center;
+        position: relative;
+        &--icon {
+          z-index: 5;
+        }
         &--icon-label {
           text-align: center;
+          margin-top: 21px;
+        }
+        &--white-rabbit {
+          transition: transform 0.2s ease-in;
+          position: absolute;
+          background-image: url("./Assets/Illustration/rabbit/rabbit_pose_1.png");
+          background-size: cover;
+          width: 30px;
+          transform: translate(0, -40px);
+          height: auto;
+          cursor: help;
+          z-index: 3;
+          animation: rabbit-1 2.5s linear infinite;
+          &:hover {
+            transform: translate(0, -70px);
+            animation: none;
+            background-image: url(Assets/Illustration/rabbit/rabbit_pose_caught.png);
+          }
+        }
+        &--white-cover {
+          position: absolute;
+          width: 70px;
+          height: 55px;
+          color: white;
+          top: 10px;
+          background-color: white;
+          z-index: 4;
         }
       }
     }
   }
+  //Projects Section
   &__projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    &--title {
+      &::after {
+        content: "";
+        position: absolute;
+        background-color: palette.$highlight-color-Op;
+        height: 13px;
+        width: 183px;
+        right: 4px;
+        top: 40px;
+      }
+    }
     &--cards {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
-
-      .card-container {
-        min-width: 373px;
-        max-width: 440px;
-        justify-content: center;
-        margin: 16px;
+      justify-content: center;
+      align-items: center;
+      gap: 49px;
+      margin-top: 119px;
+    }
+    .card-container {
+      max-width: 440px;
+      justify-content: center;
+      align-items: center;
+      margin: 0 17px;
+      @include devices.phone {
+        max-width: 100%;
       }
+
       .card-block {
         display: flex;
         justify-content: center;
         align-items: flex-end;
         height: 326px;
-        background-color: palette.$card-color;
+        background-color: palette.$primary-color;
         &--image {
           max-height: 70%;
         }
@@ -116,9 +345,10 @@ p {
       .card-description {
         &__heading {
           &--eyebrow {
-            margin-top: 16px;
+            margin-top: 38px;
             font-size: 16px;
             font-weight: 600;
+            color: palette.$card-text;
           }
           &--title {
             margin: 0;
@@ -126,34 +356,130 @@ p {
             font-weight: 600;
             font-size: 38px;
             text-align: start;
-            margin-bottom: 16px;
+            margin-bottom: 26px;
           }
         }
         &--text {
-          margin-bottom: 18px;
+          margin-bottom: 26px;
+          color: palette.$card-text;
         }
-        &__button-box {
+      }
+      .project-preview-links-container {
+        display: flex;
+        gap: 42px;
+        margin-bottom: 64px;
+        &__link {
           display: flex;
-          height: 42px;
-          gap: 20px;
-          justify-content: flex-start;
+          gap: 12px;
+          text-decoration: none;
+          &--text {
+            font-size: 16px;
+          }
+          &--image {
+            width: 24px;
+          }
+        }
+      }
+    }
+  }
+  //About Me Section (profile container, profile and graphics)
+  &__about-me {
+    @include mixin.combined-block-settings;
+    display: flex;
+    align-items: center;
+    @include devices.catch-all-small {
+      @include flex.phone-flex-container;
+    }
 
-          &--button {
-            @include buttons.button(black, rgba(0, 0, 0, 0));
-            .inner-button {
-              display: flex;
-              align-items: center;
-              justify-content: center;
+    &--profile-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      margin: 0 124px;
+      @include devices.catch-all-small {
+        align-items: center;
+        flex-direction: column;
+        flex-direction: column-reverse;
+        margin: 0;
+      }
+      @include devices.hi-res {
+        align-items: center;
+      }
 
-              &--button-text {
-                @include buttons.button-text();
-              }
-              &--angle-icon {
-                height: 20px;
-                width: 20px;
-                display: flex;
-                align-items: center;
-              }
+      .profile {
+        &__text {
+          position: relative;
+          &--title {
+            text-align: start;
+            margin: 0;
+            padding: 0;
+            font-weight: 600;
+            font-size: 48px;
+            margin-bottom: 52px;
+
+            @include devices.catch-all-small {
+              margin: 0px;
+              position: relative;
+              text-align: center;
+              top: -700px;
+            }
+          }
+          &--biography {
+            line-height: 1.8;
+            font-size: 18px;
+            margin-right: 54px;
+
+            @include devices.catch-all-small {
+              margin: 0;
+            }
+          }
+        }
+        &__image-container {
+          position: relative;
+          min-width: 670px;
+          height: 738px;
+          @include devices.catch-all-small {
+            min-width: 0;
+            width: 325px;
+            height: 448px;
+            margin: 300px 0 75px 0;
+          }
+          &--graphic-circle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            @include devices.catch-all-small {
+              width: 85px;
+              height: 85px;
+            }
+          }
+          &--graphic-squiggle {
+            position: absolute;
+            right: 0px;
+            bottom: 45.6px;
+            z-index: 2;
+            @include devices.catch-all-small {
+              width: 145.33px;
+              height: 72.5px;
+              bottom: 25.4px;
+              right: -30px;
+              left: inherit;
+            }
+          }
+          &--profile-image {
+            width: 488px;
+            height: 672px;
+            position: absolute;
+            bottom: 0;
+            left: 46px;
+            object-fit: cover;
+            @include devices.catch-all-small {
+              width: 300px;
+              height: 412px;
+              bottom: 0;
+              right: 0;
+              left: inherit;
             }
           }
         }
@@ -164,13 +490,45 @@ p {
 
 .footer-content {
   background-color: palette.$secondary-color;
-  min-width: 100px;
-  min-height: 100px;
+  min-height: 155px;
   display: flex;
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
-  justify-content: center; //change to center if small screen
+  justify-content: space-between;
+  align-items: center;
+
+  @include devices.catch-all-small {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    text-align: center;
+  }
   &--email {
     color: palette.$primary-color;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-left: 119px;
+    text-decoration: none;
+    @include devices.catch-all-small {
+      margin: 0 0 53px 0;
+    }
+  }
+  &--icons {
+    display: flex;
+    justify-content: center;
+    gap: 11px;
+    margin-right: 87px;
+    @include devices.catch-all-small {
+      margin: 54px 0 0 0;
+    }
+    .footer-icon {
+      min-width: 45px;
+      height: 45px;
+    }
   }
 }
+
+// After rule for underline
+//NOTE This is separated after speaking to co-pilot; it highlights the
+//specificity issue using BEM as it compiles differently
+//than my nesting elements do
