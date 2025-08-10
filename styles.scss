@@ -549,8 +549,33 @@ p {
     }
   }
 }
-
-// After rule for underline
-//NOTE This is separated after speaking to co-pilot; it highlights the
-//specificity issue using BEM as it compiles differently
-//than my nesting elements do
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: palette.$primary-color;
+  z-index: 3000;
+  position: absolute;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  &--newNav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.2s linear;
+    opacity: 0;
+    &__link {
+      font-size: 30px;
+      line-height: 3;
+      transition: color 0.2s linear;
+      text-decoration: none;
+    }
+    &__link:hover {
+      color: palette.$highlight-color-2;
+    }
+  }
+}
