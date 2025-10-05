@@ -6,14 +6,12 @@
 @use "./modules/devices";
 
 /*----------------*/ //De-bug border colours
-/*----------------*/
+
 $red: solid 2px red;
 $blue: solid 2px blue;
 $green: solid 2px green;
 
-/*----------------*/
-//General Rules
-/*----------------*/
+/*----------------*/ //General Rules
 * {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -38,9 +36,7 @@ p {
   font-size: 18px;
 }
 
-/*----------------*/
-//Keyframes
-/*----------------*/
+/*----------------*/ //Keyframes
 
 @keyframes rabbit-1 {
   0% {
@@ -67,13 +63,16 @@ p {
     background-image: url("./Assets/Illustration/rabbit/rabbit_pose_1.png");
   }
 }
-/*--------*/
-//Page Rules (BEM)
-/*--------*/
+
+/*---------------------------*/ //Page Rules (BEM)
+
+/*-------------*/ //HEADER
 
 .header {
   background-color: palette.$primary-color;
+
   &__nav {
+    background-color: palette.$secondary-color;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -82,435 +81,437 @@ p {
     @include devices.catch-all-small {
       padding: 47px 25px;
     }
-
-    background-color: palette.$secondary-color;
-    &--nav-icon {
-      max-height: 139px;
-      @include devices.catch-all-small {
-        height: 80px;
-      }
-    }
-    &--links {
-      @include devices.phone {
-        display: none;
-      }
-      @include devices.small-screen {
-        display: none;
-      }
-      display: flex;
-      gap: 30px;
-      align-items: center;
-      .nav-anchor {
-        text-decoration: none;
-        color: palette.$tertiary-color;
-      }
-
-      .nav-button {
-        @include buttons.standard-button;
-        width: 145px;
-        height: 45px;
-        text-align: center;
-        align-content: center;
-      }
-      .nav-anchor:hover {
-        color: palette.$highlight-color-1;
-      }
-      .nav-button:hover {
-        color: palette.$tertiary-color;
-      }
-    }
-    .nav-burger {
-      display: none;
-      margin: 0 33px;
-      @include devices.phone {
-        display: flex;
-      }
-      @include devices.small-screen {
-        display: flex;
-      }
+  }
+  &__nav-icon {
+    max-height: 139px;
+    @include devices.catch-all-small {
+      height: 80px;
     }
   }
-  &__page-hero {
+  &__nav-burger {
+    display: none;
+    margin: 0 33px;
+    @include devices.phone {
+      display: flex;
+    }
+    @include devices.small-screen {
+      display: flex;
+    }
+  }
+
+  &__nav-email-button {
+    @include buttons.standard-button;
+    width: 145px;
+    height: 45px;
+    text-align: center;
+    align-content: center;
+  }
+
+  &__nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    @include devices.phone {
+      display: none;
+    }
+    @include devices.small-screen {
+      display: none;
+    }
+  }
+
+  &__nav-anchor {
+    text-decoration: none;
+    color: palette.$tertiary-color;
+  }
+
+  &__nav-anchor:hover {
+    color: palette.$highlight-color-1;
+  }
+  &__nav-button:hover {
+    color: palette.$tertiary-color;
+  }
+
+  &__hero {
     display: flex;
     align-items: center;
     justify-self: center;
     background-color: palette.$primary-color;
     height: 738px;
     margin-bottom: 146px;
+  }
 
-    &--text {
-      margin: 0 0 0 185px;
-      @include devices.catch-all-small {
-        margin: 0 0 0 51px;
-      }
-      .hero-text {
-        position: relative;
-        border: $green;
-        &__heading {
-          position: relative;
-          display: flex;
-          font-weight: 600;
-          align-items: center;
-          justify-content: center;
-
-          @include mixin.combined-block-settings;
-          &--title {
-            font-weight: 600;
-            transition: opacity 1s ease;
-            opacity: 0;
-          }
-          &--underline {
-            display: none;
-            @include devices.hi-res {
-              position: absolute;
-              top: 80px;
-              width: 70%;
-              left: 40px;
-            }
-          }
-          &--button {
-            @include buttons.standard-button;
-            position: relative;
-            top: 55px;
-            padding: 27px 31.5px;
-            margin-left: 16px;
-            box-shadow: 5px 5px palette.$brown;
-            transition: opacity 1s ease;
-            opacity: 0;
-          }
-        }
-        &--hello-message {
-          @include padding-margin.padding-margin-settings;
-          font-size: 20px;
-          color: palette.$brown;
-          transition: opacity 1s ease;
-          opacity: 0;
-        }
-      }
+  &__hero-content {
+    position: relative;
+    margin: 0 0 0 185px;
+    @include devices.catch-all-small {
+      margin: 0 0 0 51px;
     }
+  }
 
-    &--illustration {
-      height: 100%;
-      width: 120%;
-      position: relative;
-      right: 100px;
+  &__hero-message {
+    @include padding-margin.padding-margin-settings;
+    font-size: 20px;
+    color: palette.$brown;
+    transition: opacity 1s ease;
+    opacity: 0;
+  }
 
-      transition: transform 1s ease;
-      transform: scale(0.98);
+  &__hero-heading-container {
+    position: relative;
+    display: flex;
+    font-weight: 600;
+    align-items: center;
+    justify-content: center;
+    @include mixin.combined-block-settings;
+  }
+  &__hero-heading {
+    font-weight: 600;
+    transition: opacity 1s ease;
+    opacity: 0;
+  }
 
-      #illustration {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        transition: opacity 1s ease;
-        opacity: 0;
-      }
+  &__hero-underline {
+    display: none;
+    @include devices.hi-res {
+      position: absolute;
+      top: 80px;
+      width: 70%;
+      left: 40px;
+    }
+  }
 
-      @include devices.catch-all-smaller {
-        display: none;
-      }
-      @include devices.hi-res {
-        width: 100%;
-        right: 30px;
-      }
+  &__hero-link {
+    @include buttons.standard-button;
+    position: relative;
+    top: 55px;
+    padding: 27px 31.5px;
+    margin-left: 16px;
+    box-shadow: 5px 5px palette.$brown;
+    transition: opacity 1s ease;
+    opacity: 0;
+  }
+
+  &__hero-illustration {
+    height: 100%;
+    width: 120%;
+    position: relative;
+    right: 100px;
+    transition: transform 1s ease;
+    transform: scale(0.98);
+
+    @include devices.catch-all-smaller {
+      display: none;
+    }
+    @include devices.hi-res {
+      width: 100%;
+      right: 30px;
     }
   }
 }
 
-.main-container {
+#illustration {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 1s ease;
+  opacity: 0;
+}
+
+#main-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+/*-------------*/ //TECHNICAL SKILLS
 
-  //Technical skills section
-  &__technical-skills {
-    align-items: center;
+.technical-skills {
+  align-items: center;
+  text-align: center;
+
+  &__title {
+    margin: 0 auto;
+    opacity: 0;
+    transition: opacity 1s linear;
+    position: relative;
+    display: inline-block;
+    align-self: center;
+    justify-self: center;
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: palette.$highlight-color-Op;
+      height: 13px;
+      width: 241px;
+      right: 0px;
+      top: 40px;
+    }
+  }
+
+  &__text {
+    @include padding-margin.padding-margin-settings;
     text-align: center;
-
-    &--title {
-      margin: 0 auto;
-      opacity: 0;
-      transition: opacity 1s linear;
-      position: relative;
-      display: inline-block;
-      align-self: center;
-      justify-self: center;
-      &::after {
-        content: "";
-        position: absolute;
-        background-color: palette.$highlight-color-Op;
-        height: 13px;
-        width: 241px;
-        right: 0px;
-        top: 40px;
-      }
-    }
-
-    &--skills-text {
-      @include padding-margin.padding-margin-settings;
-      text-align: center;
-      line-height: 1.6;
-      font-size: 16px;
-      max-width: 484px;
-      justify-self: center;
-      @include devices.phone {
-        max-width: 70%;
-      }
-    }
-    //ICON GALLERY RULES
-    &--icon-gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-bottom: 120px;
-
-      justify-self: center;
-      @include devices.laptop {
-        max-width: 86%;
-      }
-
-      .icon-box {
-        margin: 16px 0;
-        width: 67px;
-        height: 112px;
-        display: flex;
-        flex-direction: column;
-        padding: 0 15px;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        &--icon {
-          z-index: 5;
-        }
-        &--icon-label {
-          text-align: center;
-          margin-top: 21px;
-        }
-        &--white-rabbit {
-          transition: transform 0.2s ease-in;
-          position: absolute;
-          background-image: url("./Assets/Illustration/rabbit/rabbit_pose_1.png");
-          background-size: cover;
-          width: 30px;
-          transform: translate(0, -40px);
-          height: auto;
-          cursor: help;
-          z-index: 3;
-          animation: rabbit-1 2.5s linear infinite;
-          &:hover {
-            transform: translate(0, -70px);
-            animation: none;
-            background-image: url(Assets/Illustration/rabbit/rabbit_pose_caught.png);
-          }
-        }
-        &--white-cover {
-          position: absolute;
-          width: 70px;
-          height: 55px;
-          color: white;
-          top: 10px;
-          background-color: white;
-          z-index: 4;
-        }
-      }
+    line-height: 1.6;
+    font-size: 16px;
+    max-width: 484px;
+    justify-self: center;
+    @include devices.phone {
+      max-width: 70%;
     }
   }
-  //Projects Section
-  &__projects {
+
+  &__icon-gallery {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     flex-wrap: wrap;
-    &--title {
-      opacity: 0;
-      transition: opacity 1s linear;
-      &::after {
-        content: "";
-        position: absolute;
-        background-color: palette.$highlight-color-Op;
-        height: 13px;
-        width: 183px;
-        right: 4px;
-        top: 40px;
-      }
-    }
-    &--cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 49px;
-      margin-top: 119px;
-    }
-    .card-container {
-      max-width: 440px;
-      justify-content: center;
-      align-items: center;
-      margin: 0 17px;
-      @include devices.phone {
-        max-width: 100%;
-      }
+    justify-content: center;
+    margin-bottom: 120px;
 
-      .card-block {
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        height: 326px;
-        background-color: palette.$primary-color;
-        &--image {
-          max-height: 70%;
-        }
-      }
-      .card-description {
-        &__heading {
-          &--eyebrow {
-            margin-top: 38px;
-            font-size: 16px;
-            font-weight: 600;
-            color: palette.$card-text;
-          }
-          &--title {
-            margin: 0;
-            padding: 0;
-            font-weight: 600;
-            font-size: 38px;
-            text-align: start;
-            margin-bottom: 26px;
-          }
-        }
-        &--text {
-          margin-bottom: 26px;
-          color: palette.$card-text;
-        }
-      }
-      .project-preview-links-container {
-        display: flex;
-        gap: 42px;
-        margin-bottom: 64px;
-        &__link {
-          display: flex;
-          gap: 12px;
-          text-decoration: none;
-          &--text {
-            font-size: 16px;
-          }
-          &--image {
-            width: 24px;
-          }
-        }
-      }
-    }
-  }
-  //About Me Section (profile container, profile and graphics)
-  &__about-me {
-    @include mixin.combined-block-settings;
-    display: flex;
-    align-items: center;
-    @include devices.catch-all-small {
-      @include flex.phone-flex-container;
-    }
-
-    &--profile-container {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      margin: 0 124px;
-      @include devices.catch-all-small {
-        align-items: center;
-        flex-direction: column;
-        flex-direction: column-reverse;
-        margin: 0;
-      }
-      @include devices.hi-res {
-        align-items: center;
-      }
-
-      .profile {
-        &__text {
-          position: relative;
-          &--title {
-            text-align: start;
-            margin: 0;
-            padding: 0;
-            font-weight: 600;
-            font-size: 48px;
-            margin-bottom: 52px;
-            opacity: 0;
-            transition: opacity 1s linear;
-
-            @include devices.catch-all-small {
-              margin: 0px;
-              position: relative;
-              text-align: center;
-              top: -700px;
-            }
-          }
-          &--biography {
-            line-height: 1.8;
-            font-size: 18px;
-            margin-right: 54px;
-
-            @include devices.catch-all-small {
-              margin: 0;
-            }
-          }
-        }
-        &__image-container {
-          position: relative;
-          min-width: 670px;
-          height: 738px;
-          @include devices.catch-all-small {
-            min-width: 0;
-            width: 325px;
-            height: 448px;
-            margin: 300px 0 75px 0;
-          }
-          &--graphic-circle {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 2;
-            @include devices.catch-all-small {
-              width: 85px;
-              height: 85px;
-            }
-          }
-          &--graphic-squiggle {
-            position: absolute;
-            right: 0px;
-            bottom: 45.6px;
-            z-index: 2;
-            @include devices.catch-all-small {
-              width: 145.33px;
-              height: 72.5px;
-              bottom: 25.4px;
-              right: -30px;
-              left: inherit;
-            }
-          }
-          &--profile-image {
-            width: 488px;
-            height: 672px;
-            position: absolute;
-            bottom: 0;
-            left: 46px;
-            object-fit: cover;
-            @include devices.catch-all-small {
-              width: 300px;
-              height: 412px;
-              bottom: 0;
-              right: 0;
-              left: inherit;
-            }
-          }
-        }
-      }
+    justify-self: center;
+    @include devices.laptop {
+      max-width: 86%;
     }
   }
 }
 
-.footer-content {
+.icon-box {
+  margin: 16px 0;
+  width: 67px;
+  height: 112px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  &__icon {
+    z-index: 5;
+  }
+  &__icon-label {
+    text-align: center;
+    margin-top: 21px;
+  }
+  &__white-rabbit {
+    transition: transform 0.2s ease-in;
+    position: absolute;
+    background-image: url("./Assets/Illustration/rabbit/rabbit_pose_1.png");
+    background-size: cover;
+    width: 30px;
+    transform: translate(0, -40px);
+    height: auto;
+    cursor: help;
+    z-index: 3;
+    animation: rabbit-1 2.5s linear infinite;
+    &:hover {
+      transform: translate(0, -70px);
+      animation: none;
+      background-image: url(Assets/Illustration/rabbit/rabbit_pose_caught.png);
+    }
+  }
+  &__white-cover {
+    position: absolute;
+    width: 70px;
+    height: 55px;
+    color: white;
+    top: 10px;
+    background-color: white;
+    z-index: 4;
+  }
+}
+
+/*-------------*/ //PROJECTS
+
+.projects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  &__title {
+    opacity: 0;
+    transition: opacity 1s linear;
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: palette.$highlight-color-Op;
+      height: 13px;
+      width: 183px;
+      right: 4px;
+      top: 40px;
+    }
+  }
+  &__cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 49px;
+    margin-top: 119px;
+  }
+}
+
+.card {
+  max-width: 440px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 17px;
+  @include devices.phone {
+    max-width: 100%;
+  }
+
+  &__card-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 326px;
+    max-height: 70%;
+  }
+
+  &__description-eyebrow {
+    margin-top: 38px;
+    font-size: 16px;
+    font-weight: 600;
+    color: palette.$card-text;
+  }
+  &__title {
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    font-size: 38px;
+    text-align: start;
+    margin-bottom: 26px;
+  }
+
+  &__description-text {
+    margin-bottom: 26px;
+    color: palette.$card-text;
+  }
+
+  &__preview-links-container {
+    display: flex;
+    gap: 42px;
+    margin-bottom: 64px;
+  }
+  &__link {
+    display: flex;
+    gap: 12px;
+    text-decoration: none;
+  }
+  &__link-text {
+    font-size: 16px;
+  }
+  &__link-image {
+    width: 24px;
+  }
+}
+
+#about {
+  @include mixin.combined-block-settings;
+  display: flex;
+  align-items: center;
+  @include devices.catch-all-small {
+    @include flex.phone-flex-container;
+  }
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 124px;
+  @include devices.catch-all-small {
+    align-items: center;
+    flex-direction: column;
+    flex-direction: column-reverse;
+    margin: 0;
+  }
+  @include devices.hi-res {
+    align-items: center;
+  }
+
+  &__text {
+    position: relative;
+  }
+
+  &__bio {
+    line-height: 1.8;
+    font-size: 18px;
+    margin-right: 54px;
+    max-width: 70%;
+    justify-self: center;
+
+    @include devices.catch-all-small {
+      margin: 0;
+    }
+  }
+
+  &__title {
+    text-align: start;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    font-size: 48px;
+    margin-bottom: 52px;
+    opacity: 0;
+    transition: opacity 1s linear;
+
+    @include devices.catch-all-small {
+      margin: 0px;
+      position: relative;
+      text-align: center;
+      top: -700px;
+    }
+  }
+  &__image-container {
+    position: relative;
+    min-width: 670px;
+    height: 738px;
+    @include devices.catch-all-small {
+      min-width: 0;
+      width: 325px;
+      height: 448px;
+      margin: 300px 0 75px 0;
+    }
+  }
+  &__graphic-circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    @include devices.catch-all-small {
+      width: 85px;
+      height: 85px;
+    }
+  }
+  &__profile-image {
+    width: 488px;
+    height: 672px;
+    position: absolute;
+    bottom: 0;
+    left: 46px;
+    object-fit: cover;
+    @include devices.catch-all-small {
+      width: 300px;
+      height: 412px;
+      bottom: 0;
+      right: 0;
+      left: inherit;
+    }
+  }
+  &__graphic-squiggle {
+    position: absolute;
+    right: 0px;
+    bottom: 45.6px;
+    z-index: 2;
+    @include devices.catch-all-small {
+      width: 145.33px;
+      height: 72.5px;
+      bottom: 25.4px;
+      right: -30px;
+      left: inherit;
+    }
+  }
+}
+
+.footer {
   background-color: palette.$secondary-color;
   min-height: 155px;
   display: flex;
@@ -524,7 +525,7 @@ p {
     gap: 32px;
     text-align: center;
   }
-  &--email {
+  &__email {
     color: palette.$primary-color;
     font-weight: 400;
     font-size: 18px;
@@ -535,7 +536,7 @@ p {
       margin: 0 0 53px 0;
     }
   }
-  &--icons {
+  &__icons-container {
     display: flex;
     justify-content: center;
     gap: 11px;
@@ -543,12 +544,13 @@ p {
     @include devices.catch-all-small {
       margin: 54px 0 0 0;
     }
-    .footer-icon {
-      min-width: 45px;
-      height: 45px;
-    }
+  }
+  &__icon {
+    min-width: 45px;
+    height: 45px;
   }
 }
+
 .overlay {
   display: flex;
   justify-content: center;
@@ -561,21 +563,21 @@ p {
   margin: 0 auto;
   top: 0;
   left: 0;
-  &--newNav {
+  &__newNav {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: opacity 0.2s linear;
     opacity: 0;
-    &__link {
-      font-size: 30px;
-      line-height: 3;
-      transition: color 0.2s linear;
-      text-decoration: none;
-    }
-    &__link:hover {
-      color: palette.$highlight-color-2;
-    }
+  }
+  &__newNavLink {
+    font-size: 30px;
+    line-height: 3;
+    transition: color 0.2s linear;
+    text-decoration: none;
+  }
+  &__newNavLink:hover {
+    color: palette.$highlight-color-2;
   }
 }

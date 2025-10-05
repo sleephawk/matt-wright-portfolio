@@ -25,9 +25,9 @@
         </a>
 
         <div role="navigation" class="header__nav-links">
-          <a href="" class="header__nav-anchor">Home</a>
-          <a href="#about" class="header__nav-anchor">About</a>
-          <a href="#projects" class="header__nav-anchor">Projects </a>
+          <a href="" class="header__nav-anchor--home">Home</a>
+          <a href="#about" class="header__nav-anchor--about">About</a>
+          <a href="#projects" class="header__nav-anchor--projects">Projects </a>
 
           <a
             class="header__nav-email-button"
@@ -40,10 +40,10 @@
         </div>
       </nav>
       <div aria-label="the page hero for Matt Wrights portfolio containing graphics and the title" class="header__hero">
-        <div class="header__hero-text">
+        <div class="header__hero-content">
           <p class="header__hero-message">👋 Hey! I'm Matt Wright!</p>
-          <div class="header__hero-heading">
-          <h1 class="header__hero-bio">
+          <div class="header__hero-heading-container">
+          <h1 class="header__hero-heading">
             A Junior Software Developer with a History in Design. Based in the
             UK.
           </h1>
@@ -61,7 +61,7 @@
       </div>
     </header>
     <main>
-      <div aria-label='the content container for all the main topics on this page' class="main-container">
+      <div aria-label='the content container for all the main topics on this page' id="main-container">
         <!-- Technical Section -->
         <section
           aria-label="A section outlining the technical experience and programme proficiences held by Matt."
@@ -85,7 +85,7 @@
                 src="Assets/Icons/Springboot.png"
                 alt="Spring Boot logo icon"
               />
-              <p class="icon-box--icon-label">Spring Boot</p>
+              <p class="icon-box__icon-label">Spring Boot</p>
             </div>
             <!-- Java icon -->
             <div class="icon-box">
@@ -170,7 +170,7 @@
           </div>
         </section>
         <!-- Projects Section -->
-        <section aria-label="My Projects" class="main-container__projects">
+        <section aria-label="My Projects" class="projects">
           <h2 class="projects__title" id="projects">
             My Projects
           </h2>
@@ -283,7 +283,7 @@
                 /></a>
                 <a rel="noopener noreferrer" target="blank"  class="card__link--view-backend" href="https://github.com/gc778/railwaytest-v1.git"
                   ><span class="card__link-text--code"
-                    >Code</span
+                    >Back-end</span
                   ><img
                     class="card__link-image--angle_brackets"
                     src="Assets/Icons/angle_brackets.svg"
@@ -301,102 +301,92 @@
                 /></a>
               </div>
             </div>
-
-
-            <!-- New Card -->
+            <!-- New Card --><!--Timer-->
             <div
               aria-label="a card element containing the details and links to a project"
-              class="card-container"
+              class="card--timer"
             >
-              <div class="card-block" aria-label="a decorated container for the screenshot of the web project in this card">
                 <img
-                  class="card-block--image"
+                  class="card__image"
                   src="Assets/Screenshots/timer_ss.png"
-                  alt="a screenshot from the sleephawk designs website made with html, css and js"
+                  alt="a screenshot from the dynamic work timer, showing a menu with pixel retro images on them and a timer above."
                 />
-              </div>
-              <div class="card-description" aria-label='a brief introduction the project on the card, what its made out of and links to find it'>
-                <p class="card-description__heading--eyebrow">
-                  HTML, CSS, JAVASCRIPT
+              <div class="card__description-container" aria-label='a brief introduction the project on the card, what its made out of and links to find it'>
+                <p class="card__description-eyebrow">
+                 HTML, CSS, JAVASCRIPT
                 </p>
-                <h2 class="card-description__heading--title">
-                  Dynamic Work Timer
-                </h2>
-                <p class="card-description--text">
+                <h2 class="card__title">Dynamic Work Timer</h2>
+                <p class="card__description-text">
                   My first ever JS project! I created it as a way of keeping time in an interesting way when remote working and tracking hours to submit.
                   It has a retro style, unique features and a way to export your data into a CSV. I plan to expand it in future to hide other games
                   in the code (I love easter eggs, have you found the one on this page yet?).
                 </p>
               </div>
-              <div class="project-preview-links-container">
-                <a class="project-preview-links-container__link" href="https://github.com/sleephawk/dynamic-work-timer.git"
-                  ><span class="project-preview-links-container__link--text"
+              <div class="card__preview-links-container">
+                <a rel="noopener noreferrer" target="blank"  class="card__link--view-frontend" href="https://github.com/sleephawk/dynamic-work-timer.git"
+                  ><span class="card__link-text--code"
                     >Code</span
                   ><img
-                    class="project-preview-links-container__link--image"
+                    class="card__link-image--angle_brackets"
                     src="Assets/Icons/angle_brackets.svg"
-                    alt=""
+                    alt="An SVG of typical HTML tag angle brackets to represent the link to the raw code."
                     aria-hidden
                 /></a>
-                <a class="project-preview-links-container__link" href="https://sleephawk.github.io/dynamic-work-timer/"
-                  ><span class="project-preview-links-container__link--text"
+                <a rel="noopener noreferrer" target="blank"  class="card__link--view-website" href="https://sleephawk.github.io/dynamic-work-timer/"
+                  ><span class="card__link-text--preview"
                     >Preview</span
                   ><img
-                    class="project-preview-links-container__link--image"
+                    class="card__link-image--eye"
                     src="Assets/Icons/preview.svg"
-                    alt=""
+                    alt="An SVG of an eye icon to indicate the link to the website."
                     aria-hidden
                 /></a>
               </div>
             </div>
-            <!-- New Card -->
+            <!-- New Card --><!--Wordpress-->
             <div
               aria-label="a card element containing the details and links to a project"
-              class="card-container"
+              class="card--wordpress"
             >
-              <div class="card-block" aria-label="a decorated container for the screenshot of the web project in this card">
                 <img
-                  class="card-block--image"
+                  class="card__image"
                   src="Assets/Screenshots/tmp_ss.png"
-                  alt="a screenshot from the website Things Made Public"
+                  alt="a screenshot from the Things Made Public website, showing a colourful menu of photos from creative events."
                 />
-              </div>
-              <div class="card-description" aria-label='a brief introduction the project on the card, what its made out of and links to find it'>
-                <p class="card-description__heading--eyebrow">WORDPRESS</p>
-                <h2 class="card-description__heading--title">
-                  Things Made Public: "Our Work" Page
-                </h2>
-                <p class="card-description--text">
-                  My first freelance project: I assisted in media management, cleaning up and updating files using wordpress, and providing 
+              <div class="card__description-container" aria-label='a brief introduction the project on the card, what its made out of and links to find it'>
+                <p class="card__description-eyebrow">
+                 Wordpress
+                </p>
+                <h2 class="card__title">Things Made Public: "Our Work" Page</h2>
+                <p class="card__description-text">
+                   My first freelance project: I assisted in media management, cleaning up and updating files using wordpress, and providing 
                   accessibility audit details to help optimise and trouble shoot design details before launch day.
+
                 </p>
               </div>
-              <div class="project-preview-links-container">
-                <a class="project-preview-links-container__link" href="https://thingsmadepublic.com/our-work/"
-                  ><span class="project-preview-links-container__link--text"
+              <div class="card__preview-links-container">
+                <a rel="noopener noreferrer" target="blank"  class="card__link--view-website" href="https://thingsmadepublic.com/our-work/"
+                  ><span class="card__link-text--preview"
                     >Preview</span
                   ><img
-                    class="project-preview-links-container__link--image"
+                    class="card__link-image--eye"
                     src="Assets/Icons/preview.svg"
-                    alt=""
+                    alt="An SVG of an eye icon to indicate the link to the website."
                     aria-hidden
                 /></a>
               </div>
             </div>
-
-            <!-- end of projects container below -->
           </div>
-          <!-- end of projects section -->
         </section>
         <!-- About Section -->
         <section
           aria-label="About Me section containing profile & biography details"
-          class="main-container__about-me"
+          id="about"
         >
-          <div class="main-container__about-me--profile-container">
-            <div class="profile__text">
-              <h2 class="profile__text--title" id="about">About Me</h2>
-              <p class="profile__text--biography">
+          <div class="profile">
+            <div class="profile__text-container">
+              <h2 class="profile__title">About Me</h2>
+              <p class="profile__bio">
                 With dev competition high, I aim to bring a new spirit and perspective to the field.
                 My story began in balancing creativity with mundanity: managing data, emails
                 and staff by day, pouring energy into music & design passion projects by night.
@@ -418,19 +408,19 @@
             </div>
             <div class="profile__image-container">
               <img
-                class="profile__image-container--graphic-circle"
+                class="profile__graphic-circle"
                 src="Assets/Graphics/line-circle.png"
                 alt="a vector graphic of a minimal circle constructed of horizontal parallel lines"
               />
               <img
-                class="profile__image-container--graphic-squiggle"
+                class="profile__graphic-squiggle"
                 src="Assets/Graphics/squiggle.png"
                 alt="a vector graphic of a squiggly line similar to that drawn by a pen or paintbrush"
               />
               <img
                 src="Assets/profile.png"
                 alt="A photo of Junior Dev Matt Wright"
-                class="profile__image-container--profile-image"
+                class="profile__profile-image"
               />
             </div>
           </div>
@@ -438,15 +428,15 @@
       </div>
     </main>
     <footer>
-      <div class="footer-content">
-        <div class="footer-content--email">Matt.Wright@nology.io</div>
-        <div class="footer-content--icons">
+      <div class="footer">
+        <div class="footer__email">Matt.Wright@nology.io</div>
+        <div class="footer__icons-container">
           <a href="#"
             ><img
               aria-label="go to github page"
               src="Assets/Icons/git_pages.svg"
               alt="github pages / repositories icon"
-              class="footer-icon"
+              class="footer__icon"
           /></a>
           <a
             target="_blank"
@@ -456,14 +446,14 @@
               aria-label="go to LinkedIn page"
               src="Assets/Icons/linked_in.svg"
               alt="LinkedIn icon"
-              class="footer-icon"
+              class="footer__icon"
           /></a>
           <a href="#"
             ><img
               aria-label="go to CV"
               src="Assets/Icons/cv.svg"
               alt="CV icon"
-              class="footer-icon"
+              class="footer__icon"
           /></a>
         </div>
       </div>

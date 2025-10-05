@@ -1,18 +1,22 @@
-//QUERY SELECTORS
-const heroHeading = document.querySelector(".hero-text__heading--title");
-const heroMessage = document.querySelector(".hero-text--hello-message");
+//QUERY SELECTORS /*-------------------------------------*/
+const heroHeading = document.querySelector(".header__hero-heading");
+const heroMessage = document.querySelector(".header__hero-message");
 const heroIllustrationContainer = document.querySelector(
-  ".header__page-hero--illustration"
+  ".header__hero-illustration"
 );
-const heroButton = document.querySelector(".hero-text__heading--button");
+const heroButton = document.querySelector(".header__hero-link");
 const illustration = document.getElementById("illustration");
-const opacityCtr = (dom, num) => {
-  return (dom.style.opacity = `${num}`);
+const opacityCtr = (dom, value) => {
+  return (dom.style.opacity = `${value}`);
 };
 const body = document.querySelector("body");
 const burger = document.querySelector("#nav-burger");
+const technicalSkillsTitle = document.querySelector(".technical-skills__title");
+const projectsTitle = document.querySelector(".projects__title");
+const aboutTitle = document.querySelector(".profile__title");
 
-//UTILITIES
+//UTILS /*-------------------------------------*/
+
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const createAnchor = (linkText, linkClass, linkUrl, linkLabel) => {
@@ -48,8 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 });
 
-/*----------*/
-//observer function - I learned this newly for this project!
+//observer function - I learned this newly for this project! /*----------*/
 const opacityOnScroll = (entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -59,44 +62,36 @@ const opacityOnScroll = (entries) => {
 };
 
 const observer = new IntersectionObserver(opacityOnScroll);
-const technicalSkillsTitle = document.querySelector(
-  ".main-container__technical-skills--title"
-);
-const projectsTitle = document.querySelector(
-  ".main-container__projects--title"
-);
-const aboutTitle = document.querySelector(".profile__text--title");
+
 [technicalSkillsTitle, projectsTitle, aboutTitle].forEach((title) => {
   observer.observe(title);
 });
 
-/*------------------------------*/
-//Burger
+//BURGER/*------------------------------*/
 
 burger.addEventListener("click", () => {
-  let clicker = 1;
   body.style.overflow = "hidden";
   const overlay = document.createElement("div");
   overlay.classList.add("overlay");
   const newNav = document.createElement("nav");
-  newNav.classList.add("overlay--newNav");
+  newNav.classList.add("overlay__newNav");
   overlay.appendChild(newNav);
 
   const a1 = createAnchor(
     "About",
-    "overlay--newNav__link",
+    "overlay__newNavLink--about",
     "#about",
     "Go to about me to read biography"
   );
   const a2 = createAnchor(
     "Projects",
-    "overlay--newNav__link",
+    "overlay__newNavLink--projects",
     "#projects",
     "Go to projects page to see creations"
   );
   const a3 = createAnchor(
     "Contact",
-    "overlay--newNav__link",
+    "overlay__newNavLink--contact",
     "mailto:Matt.Wright@nology.io",
     "Contact Matt via email"
   );
@@ -119,8 +114,7 @@ burger.addEventListener("click", () => {
   }, 50);
 });
 
-/*------------------------------*/
-/*Rabbit link */
+//RABBIT /*------------------------------*/
 
 rabbit = document.querySelector(".icon-box--white-rabbit");
 
