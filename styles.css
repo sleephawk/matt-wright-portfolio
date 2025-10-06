@@ -288,6 +288,12 @@ p {
   align-items: center;
   position: relative;
 }
+@media only screen and (min-width: 429px) and (max-width: 600px) {
+  .icon-box {
+    margin: 40px;
+    box-sizing: border-box;
+  }
+}
 .icon-box__icon {
   z-index: 5;
 }
@@ -350,10 +356,12 @@ p {
   align-items: center;
   gap: 49px;
   margin-top: 119px;
+  max-width: 80%;
 }
 
 .card {
   max-width: 440px;
+  object-fit: contain;
   justify-content: center;
   align-items: center;
   margin: 0 17px;
@@ -363,12 +371,18 @@ p {
     max-width: 100%;
   }
 }
-.card__card-image {
+.card__image-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 326px;
   max-height: 70%;
+  background-color: #d1ffff;
+}
+.card__image {
+  height: 90%;
+  max-width: 90%;
+  object-fit: contain;
 }
 .card__description-eyebrow {
   margin-top: 38px;
@@ -450,6 +464,12 @@ p {
   margin-right: 54px;
   max-width: 70%;
   justify-self: center;
+}
+@media only screen and (min-width: 429px) and (max-width: 600px) {
+  .profile__bio {
+    margin: 0;
+    text-align: center;
+  }
 }
 @media only screen and (max-width: 1300px) {
   .profile__bio {

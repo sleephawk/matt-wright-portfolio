@@ -79,19 +79,19 @@ burger.addEventListener("click", () => {
 
   const a1 = createAnchor(
     "About",
-    "overlay__newNavLink--about",
+    "overlay__newNavLink",
     "#about",
     "Go to about me to read biography"
   );
   const a2 = createAnchor(
     "Projects",
-    "overlay__newNavLink--projects",
+    "overlay__newNavLink",
     "#projects",
     "Go to projects page to see creations"
   );
   const a3 = createAnchor(
     "Contact",
-    "overlay__newNavLink--contact",
+    "overlay__newNavLink",
     "mailto:Matt.Wright@nology.io",
     "Contact Matt via email"
   );
@@ -116,7 +116,7 @@ burger.addEventListener("click", () => {
 
 //RABBIT /*------------------------------*/
 
-rabbit = document.querySelector(".icon-box--white-rabbit");
+rabbit = document.querySelector(".icon-box__white-rabbit");
 
 rabbit.addEventListener("click", () => {
   window.open(

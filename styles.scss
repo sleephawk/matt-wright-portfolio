@@ -282,6 +282,10 @@ p {
   justify-content: center;
   align-items: center;
   position: relative;
+  @include devices.small-screen {
+    margin: 40px;
+    box-sizing: border-box;
+  }
   &__icon {
     z-index: 5;
   }
@@ -345,11 +349,13 @@ p {
     align-items: center;
     gap: 49px;
     margin-top: 119px;
+    max-width: 80%;
   }
 }
 
 .card {
   max-width: 440px;
+  object-fit: contain;
   justify-content: center;
   align-items: center;
   margin: 0 17px;
@@ -357,12 +363,19 @@ p {
     max-width: 100%;
   }
 
-  &__card-image {
+  &__image-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 326px;
     max-height: 70%;
+    background-color: palette.$primary-color;
+  }
+
+  &__image {
+    height: 90%;
+    max-width: 90%;
+    object-fit: contain;
   }
 
   &__description-eyebrow {
@@ -437,7 +450,10 @@ p {
     margin-right: 54px;
     max-width: 70%;
     justify-self: center;
-
+    @include devices.small-screen {
+      margin: 0;
+      text-align: center;
+    }
     @include devices.catch-all-small {
       margin: 0;
     }
