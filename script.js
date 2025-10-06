@@ -116,11 +116,13 @@ burger.addEventListener("click", () => {
 
 //RABBIT /*------------------------------*/
 
-rabbit = document.querySelector(".icon-box__white-rabbit");
-
-rabbit.addEventListener("click", () => {
-  window.open(
-    "https://sleephawk.github.io/matt-writes-code/alt-home.html",
-    "_blank"
-  );
-});
+if (document.querySelector(".icon-box__white-rabbit")) {
+  document
+    .querySelector(".icon-box__white-rabbit")
+    .addEventListener("click", () => {
+      window.open(
+        "https://sleephawk.github.io/matt-writes-code/alt-home.html",
+        "_blank"
+      );
+    });
+}
