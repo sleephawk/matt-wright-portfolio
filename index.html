@@ -18,19 +18,19 @@
         <img
           src="Assets/Icons/favicon.svg"
           alt="sleephawk logo: a crow silhouette within an eclipsed egg shape, with vector waves emitting from the top"
-          class="header__nav--nav-icon"
+          class="header__nav-icon"
         />
-        <a href="#" id="nav-burger" class="nav-burger" role="menu">
+        <a href="#" id="nav-burger" class="header__nav-burger" role="menu">
           <img src="Assets/Icons/mini-burg.png" alt="Mini burger menu" />
         </a>
 
-        <div role="navigation" class="header__nav--links">
-          <a href="" class="nav-anchor">Home</a>
-          <a href="#about" class="nav-anchor">About</a>
-          <a href="#projects" class="nav-anchor">Projects </a>
+        <div role="navigation" class="header__nav-links">
+          <a href="" class="header__nav-anchor--home">Home</a>
+          <a href="#about" class="header__nav-anchor--about">About</a>
+          <a href="#projects" class="header__nav-anchor--projects">Projects </a>
 
           <a
-            class="nav-button"
+            class="header__nav-email-button"
             target="blank"
             role="button"
             rel="noopener noreferrer"
@@ -39,19 +39,19 @@
           >
         </div>
       </nav>
-      <div aria-label="the page hero for Matt Wrights portfolio containing graphics and the title" class="header__page-hero">
-        <div class="header__page-hero--text">
-          <p class="hero-text--hello-message">👋 Hey! I'm Matt Wright!</p>
-          <div class="hero-text__heading">
-          <h1 class="hero-text__heading--title">
+      <div aria-label="the page hero for Matt Wrights portfolio containing graphics and the title" class="header__hero">
+        <div class="header__hero-content">
+          <p class="header__hero-message">👋 Hey! I'm Matt Wright!</p>
+          <div class="header__hero-heading-container">
+          <h1 class="header__hero-heading">
             A Junior Software Developer with a History in Design. Based in the
             UK.
           </h1>
-          <img class="hero-text__heading--underline" src="Assets/Graphics/underline.png" alt="" aria-hidden="true">
+          <img class="header__hero-underline" src="Assets/Graphics/underline.png" alt="" aria-hidden="true">
           </div>
-          <a class="hero-text__heading--button" role="button" href="#projects">Take a look at my work &#10549</a>
+          <a class="header__hero-link" role="button" href="#projects">Take a look at my work &#10549</a>
         </div>
-        <div class="header__page-hero--illustration">
+        <div class="header__hero-illustration">
           <img
           id="illustration"
             src="Assets/Illustration/mw_original refined@2x.png"
@@ -61,348 +61,342 @@
       </div>
     </header>
     <main>
-      <div aria-label='the content container for all the main topics on this page' class="main-container">
+      <div aria-label='the content container for all the main topics on this page' id="main-container">
         <!-- Technical Section -->
         <section
           aria-label="A section outlining the technical experience and programme proficiences held by Matt."
-          class="main-container__technical-skills"
+          class="technical-skills"
         >
-          <h2 class="main-container__technical-skills--title">
+          <h2 class="technical-skills__title">
             Technical Skills
           </h2>
-          <p class="main-container__technical-skills--skills-text">
+          <p class="technical-skills__text">
             Proficent and growing stronger in multiple front and back end languages, the principles of OOP  and functional programming, version control, technical communication, RESTful APIs, SQL DBM and more.
           </p>
           <div
             aria-label="gallery of icons depicting the programmes, programming languages and websites Matt is proficient in using"
             role="group"
-            class="main-container__technical-skills--icon-gallery"
+            class="technical-skills__icon-gallery"
           >
             <!-- Springboot icon -->
             <div class="icon-box">
               <img
-                class="icon-box--icon"
+                class="icon-box__icon"
                 src="Assets/Icons/Springboot.png"
                 alt="Spring Boot logo icon"
               />
-              <p class="icon-box--icon-label">Spring Boot</p>
+              <p class="icon-box__icon-label">Spring Boot</p>
             </div>
             <!-- Java icon -->
             <div class="icon-box">
               <img
-                class="icon-box--icon"
+                class="icon-box__icon"
                 src="Assets/Icons/Java.png"
                 alt="Java logo icon"
               />
-              <p class="icon-box--icon-label">Java</p>
+              <p class="icon-box__icon-label">Java</p>
             </div>
             <!-- HTML5 icon -->
             <div class="icon-box">
               <img
-                class="icon-box--icon"
+                class="icon-box__icon"
                 src="Assets/Icons/HTML 5.png"
                 alt="HTML 5logo icon"
               />
-              <p class="icon-box--icon-label">HTML 5</p>
+              <p class="icon-box__icon-label">HTML 5</p>
             </div>
             <!-- CSS3 icon -->
             <div class="icon-box">
               <img
-                class="icon-box--icon"
+                class="icon-box__icon"
                 src="Assets/Icons/CSS3.png"
                 alt="CSS3 logo icon"
               />
-              <p class="icon-box--icon-label">CSS3</p>
+              <p class="icon-box__icon-label">CSS3</p>
             </div>
             <!-- JS icon -->
             <div class="icon-box">
               <img
-                class="icon-box--icon"
+                class="icon-box__icon"
                 src="Assets/Icons/Javascript.png"
                 alt="Javascript logo icon"
               />
-              <p class="icon-box--icon-label">Javascript</p>
+              <p class="icon-box__icon-label">Javascript</p>
               <img
                 aria-hidden="true"
                 src="Assets/Illustration/rabbit/blank-rabbit.png"
                 alt=""
-                class="icon-box--white-rabbit"
+                class="icon-box__white-rabbit"
               />
-              <div aria-hidden="true" class="icon-box--white-cover" />WR
+              <div aria-hidden="true" class="icon-box__white-cover" />WR
               </div>
             </div>
             <!-- SCSS icon -->
             <div class="icon-box">
               <img
-                class="icon-box--icon"
+                class="icon-box__icon"
                 src="Assets/Icons/SCSS.png"
                 alt="SCSS logo icon"
               />
-              <p class="icon-box--icon-label">SCSS</p>
+              <p class="icon-box__icon-label">SCSS</p>
             </div>
             <!-- BEM icon -->
             <div class="icon-box">
               <img
-                class="icon-box--icon"
+                class="icon-box__icon"
                 src="Assets/Icons/BEM.png"
                 alt="BEM logo icon"
               />
-              <p class="icon-box--icon-label">BEM</p>
+              <p class="icon-box__icon-label">BEM</p>
             </div>
             <!-- React icon -->
             <div class="icon-box">
               <img
-                class="icon-box--icon"
+                class="icon-box__icon"
                 src="Assets/Icons/React.png"
                 alt="React logo icon"
               />
-              <p class="icon-box--icon-label">React</p>
+              <p class="icon-box__icon-label">React</p>
             </div>
             <!-- Git icon -->
             <div class="icon-box">
               <img
-                class="icon-box--icon"
+                class="icon-box__icon"
                 src="Assets/Icons/Git.png"
                 alt="Git logo"
               />
-              <p class="icon-box--icon-label">Git</p>
+              <p class="icon-box__icon-label">Git</p>
             </div>
           </div>
         </section>
         <!-- Projects Section -->
-        <section aria-label="My Projects" class="main-container__projects">
-          <h2 class="main-container__projects--title" id="projects">
+        <section aria-label="My Projects" class="projects">
+          <h2 class="projects__title" id="projects">
             My Projects
           </h2>
-          <div aria-label="a group of cards presenting the different projects Matt's undertaken" class="main-container__projects--cards">
-            <!-- New Card -->
+          <div aria-label="a group of cards presenting the different projects Matt's undertaken" class="projects__cards-container">
+            <!-- New Card --><!--Adventure-Game-->
             <div
               aria-label="a card element containing the details and links to a project"
-              class="card-container"
+              class="card"
             >
-              <div class="card-block" aria-label="a decorated container for the screenshot of the web project in this card">
+            <div class="card__image-container">
                 <img
-                  class="card-block--image"
+                  class="card__image"
                   src="Assets/Screenshots/adventure.png"
-                  alt="a screenshot from the dynamic timer made with html, css and js"
+                  alt="a screenshot from the adventure game, showing a chalk like drawing of a dice rolling next to text options."
                 />
-              </div>
-              <div class="card-description" aria-label='a brief introduction the project on the card, what its made out of and links to find it'>
-                <p class="card-description__heading--eyebrow">
+                </div>
+              <div class="card__description-container" aria-label='a brief introduction the project on the card, what its made out of and links to find it'>
+                <p class="card__description-eyebrow">
                   HTML, SCSS & TYPESCRIPT
                 </p>
-                <h2 class="card-description__heading--title">Adventure Game - The One Who Walks The Void</h2>
-                <p class="card-description--text">
+                <h2 class="card__title">Adventure Game - The One Who Walks The Void</h2>
+                <p class="card__description-text">
                   With 100 scenes, around 300 text path options and self-made music and animation, this passion project 
                   was completed in a week as a part of the _nology programme. It is the clearest evidence I have that I 
                   go above and beyond to challenge myself, grow and complete work I can be proud of.
                 </p>
               </div>
-              <div class="project-preview-links-container">
-                <a rel="noopener noreferrer" target="blank"  class="project-preview-links-container__link" href="https://github.com/sleephawk/adventure-game"
-                  ><span class="project-preview-links-container__link--text"
+              <div class="card__preview-links-container">
+                <a rel="noopener noreferrer" target="blank"  class="card__link card__link--view-code" href="https://github.com/sleephawk/adventure-game"
+                  ><span class="card__link-text card__link-text--code"
                     >Code</span
                   ><img
-                    class="project-preview-links-container__link--image"
+                    class="card__link-image card__link-image--angle_brackets"
                     src="Assets/Icons/angle_brackets.svg"
-                    alt=""
+                    alt="An SVG of typical HTML tag angle brackets to represent the link to the raw code."
                     aria-hidden
                 /></a>
-                <a rel="noopener noreferrer" target="blank"  class="project-preview-links-container__link" href="https://sleephawk.github.io/adventure-game/"
-                  ><span class="project-preview-links-container__link--text"
+                <a rel="noopener noreferrer" target="blank"  class="card__link card__link--view-website" href="https://sleephawk.github.io/adventure-game/"
+                  ><span class="card__link-text card__link-text--preview"
                     >Preview</span
                   ><img
-                    class="project-preview-links-container__link--image"
+                    class="card__link-image card__link-image--eye"
                     src="Assets/Icons/preview.svg"
-                    alt=""
+                    alt="An SVG of an eye icon to indicate the link to the website."
                     aria-hidden
                 /></a>
               </div>
             </div>
-            <!-- New Card -->
+            <!-- New Card --><!--SNAP-->
             <div
               aria-label="a card element containing the details and links to a project"
-              class="card-container"
+              class="card"
             >
-              <div class="card-block" aria-label="a decorated container for the screenshot of the web project in this card">
+            <div class="card__image-container">
                 <img
-                  class="card-block--image"
+                  class="card__image"
                   src="Assets/Screenshots/snap.png"
-                  alt="a screenshot from the dynamic timer made with html, css and js"
+                  alt="a screenshot from the snap java game"
                 />
-              </div>
-              <div class="card-description" aria-label='a brief introduction the project on the card, what its made out of and links to find it'>
-                <p class="card-description__heading--eyebrow">
+                </div>
+              <div class="card__description-container" aria-label='a brief introduction the project on the card, what its made out of and links to find it'>
+                <p class="card__description-eyebrow">
                   JAVA
                 </p>
-                <h2 class="card-description__heading--title">SNAP<br> Terminal Game</h2>
-                <p class="card-description--text">
+                <h2 class="card__title">SNAP <br> Terminal Game</h2>
+                <p class="card__description-text">
                   A simple game of snap, but played in the Java terminal: this was a _nology 
                   1-week project that helped cement principles of OOP and writing classes and methods in Java. 
                   The game runs on pressing enter until a card match appears, then type SNAP within 2 seconds to win!
                 </p>
               </div>
-              <div class="project-preview-links-container">
-                <a rel="noopener noreferrer" target="blank"  class="project-preview-links-container__link" href="https://github.com/sleephawk/snap-java.git"
-                  ><span class="project-preview-links-container__link--text"
+              <div class="card__preview-links-container">
+                <a rel="noopener noreferrer" target="blank"  class="card__link card__link--view-code" href="https://github.com/sleephawk/snap-java.git"
+                  ><span class="card__link-text card__link-text--code"
                     >Code</span
                   ><img
-                    class="project-preview-links-container__link--image"
+                    class="card__link-image card__link-image--angle_brackets"
                     src="Assets/Icons/angle_brackets.svg"
-                    alt=""
+                    alt="An SVG of typical HTML tag angle brackets to represent the link to the raw code."
                     aria-hidden
                 /></a>
               </div>
             </div>
-            <!-- New Card -->
+            <!-- New Card --><!--Full Stack Lyric Game-->
             <div
               aria-label="a card element containing the details and links to a project"
-              class="card-container"
+              class="card"
             >
-              <div class="card-block" aria-label="a decorated container for the screenshot of the web project in this card">
+            <div class="card__image-container">
                 <img
-                  class="card-block--image"
+                  class="card__image"
                   src="Assets/Screenshots/lyric.png"
-                  alt="a screenshot from the sleephawk designs website made with html, css and js"
+                  alt="a screenshot from the full stack lyric search engine, showing title and a simple search bar."
                 />
-              </div>
-              <div class="card-description" aria-label='a brief introduction the project on the card, what its made out of and links to find it'>
-                <p class="card-description__heading--eyebrow">
+                </div>
+              <div class="card__description-container" aria-label='a brief introduction the project on the card, what its made out of and links to find it'>
+                <p class="card__description-eyebrow">
                   HTML, SCSS, TYPESCRIPT, JAVA, SPRINGBOOT, SQL
                 </p>
-                <h2 class="card-description__heading--title">
-                  Full Stack Lyric Search App
-                </h2>
-                <p class="card-description--text">
+                <h2 class="card__title">Full Stack Lyric Search</h2>
+                <p class="card__description-text">
                   A full stack project completed as a team during my time with _nology. The RESTful API has two get mappers, a post map and delete map, 
                   allowing for us to create a cool little 'search by lyrics' app. This was a great collaborative experience where we learned an 
                   a lot front-back-end communication.
                 </p>
               </div>
-              <div class="project-preview-links-container">
-                <a class="project-preview-links-container__link" href="https://github.com/sleephawk/lyrics-front-end.git"
-                  ><span class="project-preview-links-container__link--text"
-                    >Front End</span
+              <div class="card__preview-links-container">
+                <a rel="noopener noreferrer" target="blank"  class="card__link card__link--view-frontend" href="https://github.com/sleephawk/lyrics-front-end.git"
+                  ><span class="card__link-text card__link-text--code"
+                    >Front-end</span
                   ><img
-                    class="project-preview-links-container__link--image"
+                    class="card__link-image card__link-image--angle_brackets"
                     src="Assets/Icons/angle_brackets.svg"
-                    alt=""
+                    alt="An SVG of typical HTML tag angle brackets to represent the link to the raw code."
                     aria-hidden
                 /></a>
-                <a class="project-preview-links-container__link" href="https://github.com/gc778/railwaytest-v1.git"
-                  ><span class="project-preview-links-container__link--text"
-                    >Back End</span
+                <a rel="noopener noreferrer" target="blank"  class="card__link card__link--view-backend" href="https://github.com/gc778/railwaytest-v1.git"
+                  ><span class="card__link-text card__link-text--code"
+                    >Back-end</span
                   ><img
-                    class="project-preview-links-container__link--image"
+                    class="card__link-image card__link-image--angle_brackets"
                     src="Assets/Icons/angle_brackets.svg"
-                    alt=""
+                    alt="An SVG of typical HTML tag angle brackets to represent the link to the raw code."
                     aria-hidden
                 /></a>
-                <a class="project-preview-links-container__link" href="https://sleephawk.github.io/lyrics-front-end/"
-                  ><span class="project-preview-links-container__link--text"
+                <a rel="noopener noreferrer" target="blank"  class="card__link card__link--view-website" href="https://sleephawk.github.io/lyrics-front-end/"
+                  ><span class="card__link-text card__link-text--preview"
                     >Preview</span
                   ><img
-                    class="project-preview-links-container__link--image"
+                    class="card__link-image card__link-image--eye"
                     src="Assets/Icons/preview.svg"
-                    alt=""
+                    alt="An SVG of an eye icon to indicate the link to the website."
                     aria-hidden
                 /></a>
               </div>
             </div>
-            <!-- New Card -->
+            <!-- New Card --><!--Timer-->
             <div
               aria-label="a card element containing the details and links to a project"
-              class="card-container"
+              class="card"
             >
-              <div class="card-block" aria-label="a decorated container for the screenshot of the web project in this card">
+            <div class="card__image-container">
                 <img
-                  class="card-block--image"
+                  class="card__image"
                   src="Assets/Screenshots/timer_ss.png"
-                  alt="a screenshot from the sleephawk designs website made with html, css and js"
+                  alt="a screenshot from the dynamic work timer, showing a menu with pixel retro images on them and a timer above."
                 />
-              </div>
-              <div class="card-description" aria-label='a brief introduction the project on the card, what its made out of and links to find it'>
-                <p class="card-description__heading--eyebrow">
-                  HTML, CSS, JAVASCRIPT
+                </div>
+              <div class="card__description-container" aria-label='a brief introduction the project on the card, what its made out of and links to find it'>
+                <p class="card__description-eyebrow">
+                 HTML, CSS, JAVASCRIPT
                 </p>
-                <h2 class="card-description__heading--title">
-                  Dynamic Work Timer
-                </h2>
-                <p class="card-description--text">
+                <h2 class="card__title">Dynamic Work Timer</h2>
+                <p class="card__description-text">
                   My first ever JS project! I created it as a way of keeping time in an interesting way when remote working and tracking hours to submit.
                   It has a retro style, unique features and a way to export your data into a CSV. I plan to expand it in future to hide other games
-                  in the code (I love easter eggs, have you found the one on this page yet?).
+                  in the code!
                 </p>
               </div>
-              <div class="project-preview-links-container">
-                <a class="project-preview-links-container__link" href="https://github.com/sleephawk/dynamic-work-timer.git"
-                  ><span class="project-preview-links-container__link--text"
+              <div class="card__preview-links-container">
+                <a rel="noopener noreferrer" target="blank"  class="card__link card__link--view-frontend" href="https://github.com/sleephawk/dynamic-work-timer.git"
+                  ><span class="card__link-text card__link-text--code"
                     >Code</span
                   ><img
-                    class="project-preview-links-container__link--image"
+                    class="card__link-image card__link-image--angle_brackets"
                     src="Assets/Icons/angle_brackets.svg"
-                    alt=""
+                    alt="An SVG of typical HTML tag angle brackets to represent the link to the raw code."
                     aria-hidden
                 /></a>
-                <a class="project-preview-links-container__link" href="https://sleephawk.github.io/dynamic-work-timer/"
-                  ><span class="project-preview-links-container__link--text"
+                <a rel="noopener noreferrer" target="blank"  class="card__link card__link--view-website" href="https://sleephawk.github.io/dynamic-work-timer/"
+                  ><span class="card__link-text card__link-text--preview"
                     >Preview</span
                   ><img
-                    class="project-preview-links-container__link--image"
+                    class="card__link-image card__link-image--eye"
                     src="Assets/Icons/preview.svg"
-                    alt=""
+                    alt="An SVG of an eye icon to indicate the link to the website."
                     aria-hidden
                 /></a>
               </div>
             </div>
-            <!-- New Card -->
+            <!-- New Card --><!--Wordpress-->
             <div
               aria-label="a card element containing the details and links to a project"
-              class="card-container"
+              class="card"
             >
-              <div class="card-block" aria-label="a decorated container for the screenshot of the web project in this card">
+            <div class="card__image-container">
                 <img
-                  class="card-block--image"
+                  class="card__image"
                   src="Assets/Screenshots/tmp_ss.png"
-                  alt="a screenshot from the website Things Made Public"
+                  alt="a screenshot from the Things Made Public website, showing a colourful menu of photos from creative events."
                 />
-              </div>
-              <div class="card-description" aria-label='a brief introduction the project on the card, what its made out of and links to find it'>
-                <p class="card-description__heading--eyebrow">WORDPRESS</p>
-                <h2 class="card-description__heading--title">
-                  Things Made Public: "Our Work" Page
-                </h2>
-                <p class="card-description--text">
-                  My first freelance project: I assisted in media management, cleaning up and updating files using wordpress, and providing 
+                </div>
+              <div class="card__description-container" aria-label='a brief introduction the project on the card, what its made out of and links to find it'>
+                <p class="card__description-eyebrow">
+                 Wordpress
+                </p>
+                <h2 class="card__title">Things Made Public: "Our Work" Page</h2>
+                <p class="card__description-text">
+                   My first freelance project: I assisted in media management, cleaning up and updating files using wordpress, and providing 
                   accessibility audit details to help optimise and trouble shoot design details before launch day.
+
                 </p>
               </div>
-              <div class="project-preview-links-container">
-                <a class="project-preview-links-container__link" href="https://thingsmadepublic.com/our-work/"
-                  ><span class="project-preview-links-container__link--text"
+              <div class="card__preview-links-container">
+                <a rel="noopener noreferrer" target="blank"  class="card__link card__link--view-website" href="https://thingsmadepublic.com/our-work/"
+                  ><span class="card__link-text card__link-text--preview"
                     >Preview</span
                   ><img
-                    class="project-preview-links-container__link--image"
+                    class="card__link-image card__link-image--eye"
                     src="Assets/Icons/preview.svg"
-                    alt=""
+                    alt="An SVG of an eye icon to indicate the link to the website."
                     aria-hidden
                 /></a>
               </div>
             </div>
-
-            <!-- end of projects container below -->
           </div>
-          <!-- end of projects section -->
         </section>
         <!-- About Section -->
         <section
           aria-label="About Me section containing profile & biography details"
-          class="main-container__about-me"
+          id="about"
         >
-          <div class="main-container__about-me--profile-container">
-            <div class="profile__text">
-              <h2 class="profile__text--title" id="about">About Me</h2>
-              <p class="profile__text--biography">
+          <div class="profile">
+            <div class="profile__text-container">
+              <h2 class="profile__title">About Me</h2>
+              <p class="profile__bio">
                 With dev competition high, I aim to bring a new spirit and perspective to the field.
                 My story began in balancing creativity with mundanity: managing data, emails
                 and staff by day, pouring energy into music & design passion projects by night.
@@ -424,19 +418,19 @@
             </div>
             <div class="profile__image-container">
               <img
-                class="profile__image-container--graphic-circle"
+                class="profile__graphic-circle"
                 src="Assets/Graphics/line-circle.png"
                 alt="a vector graphic of a minimal circle constructed of horizontal parallel lines"
               />
               <img
-                class="profile__image-container--graphic-squiggle"
+                class="profile__graphic-squiggle"
                 src="Assets/Graphics/squiggle.png"
                 alt="a vector graphic of a squiggly line similar to that drawn by a pen or paintbrush"
               />
               <img
                 src="Assets/profile.png"
                 alt="A photo of Junior Dev Matt Wright"
-                class="profile__image-container--profile-image"
+                class="profile__profile-image"
               />
             </div>
           </div>
@@ -444,15 +438,15 @@
       </div>
     </main>
     <footer>
-      <div class="footer-content">
-        <div class="footer-content--email">Matt.Wright@nology.io</div>
-        <div class="footer-content--icons">
+      <div class="footer">
+        <div class="footer__email">Matt.Wright@nology.io</div>
+        <div class="footer__icons-container">
           <a href="#"
             ><img
               aria-label="go to github page"
               src="Assets/Icons/git_pages.svg"
               alt="github pages / repositories icon"
-              class="footer-icon"
+              class="footer__icon"
           /></a>
           <a
             target="_blank"
@@ -462,14 +456,14 @@
               aria-label="go to LinkedIn page"
               src="Assets/Icons/linked_in.svg"
               alt="LinkedIn icon"
-              class="footer-icon"
+              class="footer__icon"
           /></a>
           <a href="#"
             ><img
               aria-label="go to CV"
               src="Assets/Icons/cv.svg"
               alt="CV icon"
-              class="footer-icon"
+              class="footer__icon"
           /></a>
         </div>
       </div>
