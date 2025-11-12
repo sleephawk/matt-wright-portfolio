@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import animationObserver from "./main.js";
 
 const scene = new THREE.Scene();
 scene.background = null;
@@ -14,9 +15,11 @@ const camera = new THREE.PerspectiveCamera(
 );
 camera.position.set(30, 10, 30);
 
-const renderer = new THREE.WebGLRenderer({ alpha: true });
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
-document.getElementById("canvas").appendChild(renderer.domElement);
+const canvas = document
+  .getElementById("canvas")
+  .appendChild(renderer.domElement);
 const light = new THREE.PointLight(0x001eff);
 light.intensity = 3000;
 scene.add(light);
@@ -35,7 +38,7 @@ loader.load("Assets/3d/snoozecrowBoatBake2.glb", (gltf) => {
 
 const clock = new THREE.Clock();
 
-function animate() {
+export default function animate() {
   requestAnimationFrame(animate);
 
   if (mixer) {
@@ -46,4 +49,4 @@ function animate() {
 
   renderer.render(scene, camera);
 }
-animate();
+animationObserver.observe(canvas);

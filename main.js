@@ -1,3 +1,5 @@
+import animate from "./threeLogic";
+
 //QUERY SELECTORS /*-------------------------------------*/
 const heroHeading = document.querySelector(".header__hero-heading");
 const heroMessage = document.querySelector(".header__hero-message");
@@ -61,7 +63,20 @@ const opacityOnScroll = (entries) => {
   });
 };
 
-export const observer = new IntersectionObserver(opacityOnScroll);
+const animateOnObserve = (anim) => {
+  anim.forEach((a) => {
+    if (a.isIntersecting) {
+      animate();
+      setTimeout(() => {
+        console.log("i am being observed said the crow");
+      });
+    }
+  });
+};
+
+const observer = new IntersectionObserver(opacityOnScroll);
+const animationObserver = new IntersectionObserver(animateOnObserve);
+export default animationObserver;
 
 [technicalSkillsTitle, projectsTitle, aboutTitle].forEach((title) => {
   observer.observe(title);
