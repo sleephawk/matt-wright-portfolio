@@ -37,10 +37,9 @@ loader.load("Assets/3d/snoozecrowBoatBake2.glb", (gltf) => {
 });
 
 const clock = new THREE.Clock();
-
-export default function animate() {
-  requestAnimationFrame(animate);
-
+let animationID; // so that we can check if animation is running
+//not a boolean since its type is a function.
+export const animate = () => {
   if (mixer) {
     mixer.update(clock.getDelta());
   }
@@ -48,5 +47,20 @@ export default function animate() {
   controls.update();
 
   renderer.render(scene, camera);
-}
+  animationID = requestAnimationFrame(animate);
+};
+
+export const startAnimation = () => {
+  if (!animationID) {
+    animate();
+  }
+};
+export const stopAnimation = () => {
+  if (animationID) {
+    cancelAnimationFrame(animationID); // uses the animation frame
+    //to make sure it cancels
+    animationID = null; // ensure startAnimation can be called
+  }
+};
+
 animationObserver.observe(canvas);

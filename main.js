@@ -1,4 +1,4 @@
-import animate from "./threeLogic";
+import { startAnimation, stopAnimation } from "./threeLogic";
 
 //QUERY SELECTORS /*-------------------------------------*/
 const heroHeading = document.querySelector(".header__hero-heading");
@@ -66,10 +66,11 @@ const opacityOnScroll = (entries) => {
 const animateOnObserve = (anim) => {
   anim.forEach((a) => {
     if (a.isIntersecting) {
-      animate();
-      setTimeout(() => {
-        console.log("i am being observed said the crow");
-      });
+      startAnimation();
+      console.log("i started rowing!");
+    } else {
+      stopAnimation();
+      console.log("ok ill stop");
     }
   });
 };
