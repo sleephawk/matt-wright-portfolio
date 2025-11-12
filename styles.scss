@@ -597,3 +597,8 @@ p {
     color: palette.$highlight-color-2;
   }
 }
+#canvas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

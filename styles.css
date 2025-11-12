@@ -628,4 +628,10 @@ p {
   color: #c0980b;
 }
 
+#canvas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /*# sourceMappingURL=styles.css.map */
