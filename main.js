@@ -1,4 +1,4 @@
-import { startAnimation, stopAnimation } from "./boatLogic.js";
+import { startAnimation, stopAnimation, canvas } from "./boatLogic.js";
 
 //QUERY SELECTORS /*-------------------------------------*/
 const heroHeading = document.querySelector(".header__hero-heading");
@@ -83,6 +83,8 @@ export default animationObserver;
 [technicalSkillsTitle, projectsTitle, aboutTitle].forEach((title) => {
   observer.observe(title);
 });
+
+animationObserver.observe(canvas);
 
 //BURGER/*------------------------------*/
 
