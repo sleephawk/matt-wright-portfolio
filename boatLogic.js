@@ -7,19 +7,20 @@ const scene = new THREE.Scene();
 scene.background = null;
 
 const loader = new GLTFLoader();
+
+const canvas = document.getElementById("canvas");
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+
+canvas.appendChild(renderer.domElement);
 const camera = new THREE.PerspectiveCamera(
   750,
-  window.innerWidth / window.innerHeight,
+  canvas.clientWidth / canvas.clientHeight,
   0.1,
   1000
 );
 camera.position.set(30, 10, 30);
-
-const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-renderer.setSize(window.innerWidth, window.innerHeight);
-const canvas = document
-  .getElementById("canvas")
-  .appendChild(renderer.domElement);
 const light = new THREE.PointLight(0x001eff);
 light.intensity = 3000;
 scene.add(light);
@@ -35,7 +36,12 @@ loader.load("Assets/3d/snoozecrowBoatBake2.glb", (gltf) => {
   mixer = new THREE.AnimationMixer(snoozy);
   gltf.animations.forEach((clip) => mixer.clipAction(clip).play());
 });
-
+window.addEventListener("resize", () => {
+  const { clientWidth, clientHeight } = canvas;
+  renderer.setSize(clientWidth, clientHeight);
+  camera.aspect = clientWidth / clientHeight;
+  camera.updateProjectionMatrix();
+});
 const clock = new THREE.Clock();
 let animationID; // so that we can check if animation is running
 //not a boolean since its type is a function.
