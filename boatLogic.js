@@ -1,14 +1,13 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
-import animationObserver from "./main.js";
 
 const scene = new THREE.Scene();
 scene.background = null;
 
 const loader = new GLTFLoader();
 
-const canvas = document.getElementById("canvas");
+export const canvas = document.getElementById("canvas");
 const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(canvas.clientWidth, canvas.clientHeight);
@@ -74,5 +73,3 @@ export const stopAnimation = () => {
     canvas.style.pointerEvents = "none";
   }
 };
-
-animationObserver.observe(canvas);
