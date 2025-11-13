@@ -1,2 +1,0 @@
-- fix the broken SCSS BEM issues
-- Change all text to useful text
