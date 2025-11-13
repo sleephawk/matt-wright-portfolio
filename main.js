@@ -64,15 +64,16 @@ const opacityOnScroll = (entries) => {
 };
 
 const animateOnObserve = (anim) => {
-  anim.forEach((a) => {
-    if (a.isIntersecting) {
-      startAnimation();
-      console.log("i started rowing!");
-    } else {
-      stopAnimation();
-      console.log("ok ill stop");
-    }
-  });
+  anim.forEach(
+    (a) => {
+      if (a.isIntersecting) {
+        startAnimation();
+      } else {
+        stopAnimation();
+      }
+    },
+    { threshold: 0.1 }
+  );
 };
 
 const observer = new IntersectionObserver(opacityOnScroll);

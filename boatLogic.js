@@ -15,7 +15,7 @@ renderer.setSize(canvas.clientWidth, canvas.clientHeight);
 
 canvas.appendChild(renderer.domElement);
 const camera = new THREE.PerspectiveCamera(
-  750,
+  75,
   canvas.clientWidth / canvas.clientHeight,
   0.1,
   1000
@@ -31,6 +31,7 @@ controls.enableZoom = false;
 
 loader.load("Assets/3d/snoozecrowBoatBake2.glb", (gltf) => {
   const snoozy = gltf.scene;
+  snoozy.scale.set(2, 2, 2);
   scene.add(snoozy);
 
   mixer = new THREE.AnimationMixer(snoozy);
@@ -51,7 +52,9 @@ export const animate = () => {
   }
   controls.autoRotate = true;
   controls.update();
-
+  canvas.clientWidth < 500
+    ? (controls.enabled = false)
+    : (controls.enabled = true);
   renderer.render(scene, camera);
   animationID = requestAnimationFrame(animate);
 };
@@ -59,13 +62,16 @@ export const animate = () => {
 export const startAnimation = () => {
   if (!animationID) {
     animate();
+    canvas.style.visibility = "unset";
+    canvas.style.pointerEvents = "auto";
   }
 };
 export const stopAnimation = () => {
   if (animationID) {
     cancelAnimationFrame(animationID); // uses the animation frame
-    //to make sure it cancels
     animationID = null; // ensure startAnimation can be called
+    canvas.style.visibility = "hidden";
+    canvas.style.pointerEvents = "none";
   }
 };
 
