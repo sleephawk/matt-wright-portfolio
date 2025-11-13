@@ -1,5 +1,5 @@
 import { startAnimation, stopAnimation, canvas } from "./boatLogic.js";
-
+console.log("ive been updated, have you?");
 //QUERY SELECTORS /*-------------------------------------*/
 const heroHeading = document.querySelector(".header__hero-heading");
 const heroMessage = document.querySelector(".header__hero-message");
