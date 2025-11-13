@@ -1,4 +1,4 @@
-import { startAnimation, stopAnimation } from "./boatLogic";
+import { startAnimation, stopAnimation } from "./boatLogic.js";
 
 //QUERY SELECTORS /*-------------------------------------*/
 const heroHeading = document.querySelector(".header__hero-heading");
