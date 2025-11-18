@@ -127,21 +127,16 @@ p {
   color: #ffe7d9;
 }
 .header__hero {
-  display: flex;
-  align-items: center;
-  justify-self: center;
+  position: relative;
   background-color: #d1ffff;
-  height: 738px;
+  padding: 50px;
   margin-bottom: 146px;
 }
 .header__hero-content {
   position: relative;
-  margin: 0 0 0 185px;
-}
-@media only screen and (max-width: 1300px) {
-  .header__hero-content {
-    margin: 0 0 0 51px;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .header__hero-message {
   padding: 16px 8px 16px 8px;
@@ -152,31 +147,15 @@ p {
   opacity: 0;
 }
 .header__hero-heading-container {
-  position: relative;
   display: flex;
   font-weight: 600;
   align-items: center;
   justify-content: center;
-  padding: 16px 8px 16px 8px;
-  margin: 16px;
-  display: flex;
-  flex-direction: column;
 }
 .header__hero-heading {
   font-weight: 600;
   transition: opacity 1s ease;
   opacity: 0;
-}
-.header__hero-underline {
-  display: none;
-}
-@media only screen and (min-width: 1728px) {
-  .header__hero-underline {
-    position: absolute;
-    top: 80px;
-    width: 70%;
-    left: 40px;
-  }
 }
 .header__hero-link {
   font-size: 16px;
@@ -211,20 +190,6 @@ p {
     width: 100%;
     right: 30px;
   }
-}
-
-#illustration {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transition: opacity 1s ease;
-  opacity: 0;
-}
-
-#main-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 /*-------------*/
@@ -627,16 +592,27 @@ p {
   color: #c0980b;
 }
 
-#canvas {
-  width: 100%;
-  aspect-ratio: 16/9;
+#canvas,
+#bobbleCanvas {
   position: relative;
   overflow: hidden;
 }
-#canvas canvas {
+
+#canvas canvas,
+#bobbleCanvas canvas {
   width: 100%;
   height: 100%;
   display: block;
+}
+
+#canvas {
+  aspect-ratio: 16/9;
+  width: 100%;
+}
+
+#bobbleCanvas {
+  width: 50%;
+  aspect-ratio: 1/1;
 }
 
 /*# sourceMappingURL=styles.css.map */

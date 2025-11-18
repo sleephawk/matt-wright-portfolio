@@ -25,7 +25,7 @@ light.intensity = 3000;
 scene.add(light);
 let mixer;
 const controls = new OrbitControls(camera, renderer.domElement);
-
+controls.autoRotate = true;
 controls.enableZoom = false;
 
 loader.load("Assets/3d/snoozecrowBoatBake2.glb", (gltf) => {
@@ -49,11 +49,11 @@ export const animate = () => {
   if (mixer) {
     mixer.update(clock.getDelta());
   }
-  controls.autoRotate = true;
-  controls.update();
+
   canvas.clientWidth < 500
     ? (controls.enabled = false)
     : (controls.enabled = true);
+  controls.update();
   renderer.render(scene, camera);
   animationID = requestAnimationFrame(animate);
 };
@@ -61,12 +61,14 @@ export const animate = () => {
 export const startAnimation = () => {
   if (!animationID) {
     animate();
+    console.log("starting NOW as there's no animation ID right now.");
     canvas.style.visibility = "unset";
     canvas.style.pointerEvents = "auto";
   }
 };
 export const stopAnimation = () => {
   if (animationID) {
+    console.log(`about to stop since animation id is ${animationID}`);
     cancelAnimationFrame(animationID); // uses the animation frame
     animationID = null; // ensure startAnimation can be called
     canvas.style.visibility = "hidden";
