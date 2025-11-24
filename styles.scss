@@ -1,15 +1,11 @@
-@use "./modules/palette";
-@use "./modules/mixin";
-@use "./modules/flex";
-@use "./modules/padding-margin";
-@use "./modules/buttons";
-@use "./modules/devices";
+@use "src/modules/palette";
+@use "src/modules/mixin";
+@use "src/modules/flex";
+@use "src/modules/padding-margin";
+@use "src/modules/buttons";
+@use "src/modules/devices";
 
 /*----------------*/ //De-bug border colours
-
-$red: solid 2px red;
-$blue: solid 2px blue;
-$green: solid 2px green;
 
 /*----------------*/ //General Rules
 * {
