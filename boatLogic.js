@@ -28,7 +28,7 @@ const controls = new OrbitControls(camera, renderer.domElement);
 
 controls.enableZoom = false;
 
-loader.load("Assets/3d/snoozecrowBoatBake2.glb", (gltf) => {
+loader.load("/Assets/3d/snoozecrowBoatBake2.glb", (gltf) => {
   const snoozy = gltf.scene;
   snoozy.scale.set(2, 2, 2);
   scene.add(snoozy);
