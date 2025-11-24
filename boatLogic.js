@@ -51,9 +51,13 @@ export const animate = () => {
   }
   controls.autoRotate = true;
   controls.update();
-  canvas.clientWidth < 500
-    ? (controls.enabled = false)
-    : (controls.enabled = true);
+  if (canvas.clientWidth < 500) {
+    controls.enabled = false;
+    canvas.style.pointerEvents = false;
+  } else {
+    controls.enabled = true;
+    canvas.style.pointerEvents = true;
+  }
   renderer.render(scene, camera);
   animationID = requestAnimationFrame(animate);
 };

@@ -70,6 +70,7 @@ p {
 
 .header {
   background-color: palette.$primary-color;
+  max-width: 100%;
 
   &__nav {
     background-color: palette.$secondary-color;
@@ -138,13 +139,27 @@ p {
     background-color: palette.$primary-color;
     height: 738px;
     margin-bottom: 146px;
+    max-width: 100%;
+    @include devices.catch-all-smaller {
+      display: flex;
+      flex-direction: row-reverse;
+      height: unset;
+    }
   }
 
   &__hero-content {
     position: relative;
-    margin: 0 0 0 185px;
+    margin-left: 20px;
+
+    max-width: 100%;
+    @include devices.hi-res {
+      margin-left: 185px;
+    }
     @include devices.catch-all-small {
-      margin: 0 0 0 51px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
   }
 
@@ -157,17 +172,28 @@ p {
   }
 
   &__hero-heading-container {
+    max-width: 100%;
     position: relative;
     display: flex;
     font-weight: 600;
     align-items: center;
     justify-content: center;
+
     @include mixin.combined-block-settings;
+    @include devices.phone {
+      margin: 0 auto;
+    }
   }
   &__hero-heading {
+    max-width: 100%;
     font-weight: 600;
     transition: opacity 1s ease;
     opacity: 0;
+    @include devices.phone {
+      font-size: 3rem;
+      max-width: 80%;
+      margin: 0 auto;
+    }
   }
 
   &__hero-underline {
@@ -204,7 +230,6 @@ p {
     }
     @include devices.hi-res {
       width: 100%;
-      right: 30px;
     }
   }
 }
