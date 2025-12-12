@@ -284,11 +284,9 @@ p {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 80%;
 
     justify-self: center;
-    @include devices.laptop {
-      max-width: 86%;
-    }
   }
 }
 
